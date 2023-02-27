@@ -57,7 +57,7 @@ CREATE TABLE `product` (
   `type` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `brand` int(11) DEFAULT NULL,
   `description` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `vote_rating` int(11) NOT NULL DEFAULT 0,
+  `vote_rating` float(11) NOT NULL DEFAULT 0,
   `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `price` float NOT NULL DEFAULT 0,
   `promotion_id` int(11) NOT NULL,
