@@ -5,10 +5,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SearchController;
 
 
-Route::get('/', function () {
-    return view('layouts.app');
-});
-//all product
-Route::get('/products',[ProductsController::class,'products'] );
+// homepage
+Route::get('/',[ProductsController::class,'products'] );
 //product detail
 Route::get('/product/{id}',[ProductsController::class,'product'] );

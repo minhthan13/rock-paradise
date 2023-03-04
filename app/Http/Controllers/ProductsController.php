@@ -9,7 +9,7 @@ class ProductsController extends Controller
 {
     public function products(){
         $query = DB::table('product')->get();
-        return view('layouts.app',['products'=>$query]);
+        return view('layouts.body',['products'=>$query]);
     }
     public function product($id){
         $query = DB::table('product')->where('product.product_id','='.$id)->get();

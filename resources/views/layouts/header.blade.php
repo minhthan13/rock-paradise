@@ -1,34 +1,40 @@
-<div class="d-flex justify-content-around">
-
-    <div class="col-md-2 d-flex align-items-center logo">
-        <a href="/">
-            <img src="https://cdn.shopify.com/s/files/1/1552/6795/files/Rock_Paradise_Logo_3498b975-ea43-49f0-8eda-5b5ac79bc881_110x.png?v=1676004611"
-                alt="Rock Paradise"
-                srcset="https://cdn.shopify.com/s/files/1/1552/6795/files/Rock_Paradise_Logo_3498b975-ea43-49f0-8eda-5b5ac79bc881_110x.png?v=1676004611">
-        </a>
+<div class="navbar">
+    <div class="logo-navbar">
+        <img src="{{ asset('images/logo.avif') }}" alt="" />
     </div>
-    <ul class="col-md-8 navbar navbar-expand-lg justify-content-center mb-0 head-menu">
-        {{-- <li class="nav-item">Home</li>
-        <li class="nav-item">Product</li>
-        <li class="nav-item">Best Selling</li>
-        <li class="nav-item">Contact</li>
-        <li class="nav-item">About Us</li>
-        <li class="nav-item">FQA</li> --}}
-        @foreach ($cate as $item)
-            <li class="nav-item">{{ $item->name }}</li>
-        @endforeach
-    </ul>
-    <div class="col-md-2  d-flex align-items-end head-icon  ">
-        <section>
-            <a href="#">
-                <i class="bi bi-person"></i>
-            </a>
-            <a href="#">
-                <i class="bi bi-basket3"></i>
-            </a>
-            <a href="#">
-                <i class="bi bi-search"></i>
-            </a>
-        </section>
+    <div class="menu-navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a class="link" href="">Home</a></li>
+            <li class="nav-item has-child">
+                <a class="link" href="">Product</a>
+                <ul class="sub-menu">
+                    @foreach ($cate as $c)
+                        <li class="sub-menu-item"><a href="#">{{ $c->name }}</a></li>
+                    @endforeach
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="link" href="">Best Selling</a>
+            </li>
+            <li class="nav-item"><a class="link" href="">Contact</a></li>
+            <li class="nav-item"><a class="link" href="">About Us</a></li>
+            <li class="nav-item"><a class="link" href="">FAQ</a></li>
+        </ul>
+    </div>
+    <div class="nav-icon">
+        <a href=""><i class="fa-regular fa-user"></i></a>
+        <i class="fa-solid fa-magnifying-glass" onclick="search()"></i>
+        <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+    </div>
+</div>
+<div class="container-search close">
+    <div class="search">
+        <form action="">
+            <button type="submit">
+                <i class="fa-solid fa-magnifying-glass" onclick="search()"></i>
+            </button>
+            <input type="search" placeholder="Search Our Store" />
+        </form>
+        <button onclick="Close()"><i class="fa-solid fa-xmark"></i></button>
     </div>
 </div>

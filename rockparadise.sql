@@ -38,7 +38,7 @@ ALTER TABLE `product`
     REFERENCES `category` (`category_id`);
 
 CREATE TABLE `image` (
-  `image_id` int(11) NOT NULL,
+  `image_id` int(11) PRIMARY KEY AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
   `default_image` bit(1) NOT NULL DEFAULT b'0'
 ) ENGINE=InnoDB;
@@ -200,3 +200,109 @@ INSERT INTO `product` (`product_id`, `category_id`, `name`, `brand`, `title`, `p
 (NULL, '2', 'SE107', NULL, 'ONE BLUE MELTING STONE SPHERE,QUARTZ CRYSTAL BALL,HOME DECORATION', '17', 'sphere', 'stone', 'This product requires the use of ultraviolet light to see the color change.', NULL, '0', '0', 'blue', 'middle', b'0', current_timestamp()), 
 (NULL, '2', 'SE108', NULL, '2.4\" FLAKY CLEAR QUARTZ SPHERE, CRYSTAL BALL, NATURAL CRYSTAL SPHERE', '22', 'sphere', 'stone', 'The sphere form signifies the emanation of energy from within. Clear quartz is one of its strong protective types.It dissipates negative energy and clears it away.', NULL, '0', '0', 'white', 'middle', b'0', current_timestamp());
 
+-- insert Image
+
+INSERT INTO `image` (`image_id`, `product_id`, `default_image`) 
+VALUES
+-- A1...
+(NULL, '1', b'1'), (NULL, '1', b'0'), (NULL, '1', b'0'), (NULL, '1', b'0'),
+(NULL, '2', b'1'), (NULL, '2', b'0'), (NULL, '2', b'0'), (NULL, '2', b'0'),
+(NULL, '3', b'1'), (NULL, '3', b'0'), (NULL, '3', b'0'), (NULL, '3', b'0'), (NULL, '3', b'0'),
+(NULL, '4', b'1'), (NULL, '4', b'0'), (NULL, '4', b'0'), (NULL, '4', b'0'), (NULL, '4', b'0'),
+(NULL, '5', b'1'), (NULL, '5', b'0'), (NULL, '5', b'0'), (NULL, '5', b'0'),
+(NULL, '6', b'1'), (NULL, '6', b'0'), (NULL, '6', b'0'),
+(NULL, '7', b'1'), (NULL, '7', b'0'), (NULL, '7', b'0'), (NULL, '7', b'0'), (NULL, '7', b'0'), (NULL, '7', b'0'),
+(NULL, '8', b'1'), (NULL, '8', b'0'), (NULL, '8', b'0'), (NULL, '8', b'0'),
+(NULL, '9', b'1'), (NULL, '9', b'0'), (NULL, '9', b'0'), (NULL, '9', b'0'), (NULL, '9', b'0'), (NULL, '9', b'0'),
+(NULL, '10', b'1'), (NULL, '10', b'0'), (NULL, '10', b'0'), (NULL, '10', b'0'), (NULL, '10', b'0'),
+
+-- D1...
+(NULL, '21', b'1'), (NULL, '21', b'0'), (NULL, '21', b'0'), (NULL, '21', b'0'),
+(NULL, '22', b'1'), (NULL, '22', b'0'), (NULL, '22', b'0'), (NULL, '22', b'0'),
+(NULL, '23', b'1'), (NULL, '23', b'0'), (NULL, '23', b'0'), (NULL, '23', b'0'),
+(NULL, '24', b'1'), (NULL, '24', b'0'), (NULL, '24', b'0'), (NULL, '24', b'0'),
+(NULL, '25', b'1'), (NULL, '25', b'0'), (NULL, '25', b'0'), (NULL, '25', b'0'),
+(NULL, '26', b'1'), (NULL, '26', b'0'), (NULL, '26', b'0'), (NULL, '26', b'0'), (NULL, '26', b'0'),
+(NULL, '27', b'1'), (NULL, '27', b'0'), (NULL, '27', b'0'), (NULL, '27', b'0'), (NULL, '27', b'0'),
+(NULL, '28', b'1'), (NULL, '28', b'0'), (NULL, '28', b'0'), (NULL, '28', b'0'), (NULL, '28', b'0'),
+(NULL, '29', b'1'), (NULL, '29', b'0'), (NULL, '29', b'0'), (NULL, '29', b'0'), (NULL, '29', b'0'),
+(NULL, '30', b'1'), (NULL, '30', b'0'), (NULL, '30', b'0'), (NULL, '30', b'0'),
+
+-- Q1...
+(NULL, '11', b'1'), (NULL, '11', b'0'), (NULL, '11', b'0'), (NULL, '11', b'0'), (NULL, '11', b'0'),
+(NULL, '12', b'1'), (NULL, '12', b'0'), (NULL, '12', b'0'), (NULL, '12', b'0'),
+(NULL, '13', b'1'), (NULL, '13', b'0'), (NULL, '13', b'0'), (NULL, '13', b'0'),
+(NULL, '14', b'1'), (NULL, '14', b'0'), (NULL, '14', b'0'), (NULL, '14', b'0'),
+(NULL, '15', b'1'), (NULL, '15', b'0'), (NULL, '15', b'0'), (NULL, '15', b'0'), (NULL, '15', b'0'),
+(NULL, '16', b'1'), (NULL, '16', b'0'), (NULL, '16', b'0'), (NULL, '16', b'0'), (NULL, '16', b'0'),
+(NULL, '17', b'1'), (NULL, '17', b'0'), (NULL, '17', b'0'), (NULL, '17', b'0'),
+(NULL, '18', b'1'), (NULL, '18', b'0'), (NULL, '18', b'0'), (NULL, '18', b'0'), (NULL, '18', b'0'),
+(NULL, '19', b'1'), (NULL, '19', b'0'), (NULL, '19', b'0'), (NULL, '19', b'0'), (NULL, '19', b'0'),
+(NULL, '20', b'1'), (NULL, '20', b'0'), (NULL, '20', b'0'), (NULL, '20', b'0'), (NULL, '20', b'0'),
+
+-- E1....
+(NULL, '31', b'1'), (NULL, '31', b'0'), (NULL, '31', b'0'), (NULL, '31', b'0'),
+(NULL, '32', b'1'), (NULL, '32', b'0'),
+(NULL, '33', b'1'), (NULL, '33', b'0'), (NULL, '33', b'0'), (NULL, '33', b'0'), (NULL, '33', b'0'),
+(NULL, '34', b'1'), (NULL, '34', b'0'), (NULL, '34', b'0'), (NULL, '34', b'0'), (NULL, '34', b'0'),
+(NULL, '35', b'1'), (NULL, '35', b'0'), (NULL, '35', b'0'), (NULL, '35', b'0'), (NULL, '35', b'0'),
+(NULL, '36', b'1'), (NULL, '36', b'0'), (NULL, '36', b'0'),
+(NULL, '37', b'1'), (NULL, '37', b'0'), (NULL, '37', b'0'), (NULL, '37', b'0'), (NULL, '37', b'0'),
+(NULL, '38', b'1'), (NULL, '38', b'0'), (NULL, '38', b'0'),
+(NULL, '39', b'1'), (NULL, '39', b'0'), (NULL, '39', b'0'), (NULL, '39', b'0'), (NULL, '39', b'0'),
+(NULL, '40', b'1'), (NULL, '40', b'0'), (NULL, '40', b'0'), (NULL, '40', b'0'),
+(NULL, '41', b'1'), (NULL, '41', b'0'), (NULL, '41', b'0'), (NULL, '41', b'0'),
+
+-- J1....
+(NULL, '42', b'1'), (NULL, '42', b'0'), (NULL, '42', b'0'), (NULL, '42', b'0'), (NULL, '42', b'0'),
+(NULL, '43', b'1'), (NULL, '43', b'0'), (NULL, '43', b'0'), (NULL, '43', b'0'), (NULL, '43', b'0'),
+(NULL, '44', b'1'), (NULL, '44', b'0'), (NULL, '44', b'0'), (NULL, '44', b'0'), (NULL, '44', b'0'),
+(NULL, '45', b'1'), (NULL, '45', b'0'), (NULL, '45', b'0'), (NULL, '45', b'0'), (NULL, '45', b'0'),
+(NULL, '46', b'1'), (NULL, '46', b'0'), (NULL, '46', b'0'), (NULL, '46', b'0'), (NULL, '46', b'0'),
+(NULL, '47', b'1'), (NULL, '47', b'0'), (NULL, '47', b'0'), (NULL, '47', b'0'),
+(NULL, '48', b'1'), (NULL, '48', b'0'), (NULL, '48', b'0'), (NULL, '48', b'0'),
+(NULL, '49', b'1'), (NULL, '49', b'0'), (NULL, '49', b'0'), (NULL, '49', b'0'), (NULL, '49', b'0'),
+(NULL, '50', b'1'), (NULL, '50', b'0'), (NULL, '50', b'0'), (NULL, '50', b'0'), (NULL, '50', b'0'),
+(NULL, '51', b'1'), (NULL, '51', b'0'), (NULL, '51', b'0'), (NULL, '51', b'0'),
+
+-- P1...
+(NULL, '52', b'1'), (NULL, '52', b'0'), (NULL, '52', b'0'),
+(NULL, '53', b'1'), (NULL, '53', b'0'), (NULL, '53', b'0'),
+(NULL, '54', b'1'), (NULL, '54', b'0'), (NULL, '54', b'0'), (NULL, '54', b'0'),(NULL, '54', b'0'),
+(NULL, '55', b'1'), (NULL, '55', b'0'), (NULL, '55', b'0'), (NULL, '55', b'0'),
+(NULL, '56', b'1'), (NULL, '56', b'0'), (NULL, '56', b'0'),
+
+-- R1...
+(NULL, '57', b'1'), (NULL, '57', b'0'), (NULL, '57', b'0'), (NULL, '57', b'0'), (NULL, '57', b'0'),
+(NULL, '58', b'1'), (NULL, '58', b'0'), (NULL, '58', b'0'), (NULL, '58', b'0'), (NULL, '58', b'0'),
+(NULL, '59', b'1'), (NULL, '59', b'0'), (NULL, '59', b'0'), (NULL, '59', b'0'), (NULL, '59', b'0'),
+(NULL, '60', b'1'), (NULL, '60', b'0'), (NULL, '60', b'0'), (NULL, '60', b'0'), (NULL, '60', b'0'),
+(NULL, '61', b'1'), (NULL, '61', b'0'), (NULL, '61', b'0'), (NULL, '61', b'0'), (NULL, '61', b'0'),
+(NULL, '62', b'1'), (NULL, '62', b'0'), (NULL, '62', b'0'), (NULL, '62', b'0'), (NULL, '62', b'0'),
+(NULL, '63', b'1'), (NULL, '63', b'0'), (NULL, '63', b'0'), (NULL, '63', b'0'), (NULL, '63', b'0'),
+(NULL, '64', b'1'), (NULL, '64', b'0'), (NULL, '64', b'0'), (NULL, '64', b'0'), (NULL, '64', b'0'),
+(NULL, '65', b'1'), (NULL, '65', b'0'), (NULL, '65', b'0'), (NULL, '65', b'0'),
+(NULL, '66', b'1'), (NULL, '66', b'0'), (NULL, '66', b'0'), (NULL, '66', b'0'), (NULL, '66', b'0'),
+
+-- S1...
+(NULL, '67', b'1'), (NULL, '67', b'0'), (NULL, '67', b'0'), (NULL, '67', b'0'),
+(NULL, '68', b'1'), (NULL, '68', b'0'), (NULL, '68', b'0'),
+(NULL, '69', b'1'), (NULL, '69', b'0'), (NULL, '69', b'0'), (NULL, '69', b'0'), (NULL, '69', b'0'),
+(NULL, '70', b'1'), (NULL, '70', b'0'), (NULL, '70', b'0'), (NULL, '70', b'0'),
+(NULL, '71', b'1'), (NULL, '71', b'0'), (NULL, '71', b'0'),
+(NULL, '72', b'1'), (NULL, '72', b'0'),
+(NULL, '73', b'1'), (NULL, '73', b'0'), (NULL, '73', b'0'), (NULL, '73', b'0'), (NULL, '73', b'0'),
+(NULL, '74', b'1'), (NULL, '74', b'0'), (NULL, '74', b'0'), (NULL, '74', b'0'),
+(NULL, '75', b'1'), (NULL, '75', b'0'), (NULL, '75', b'0'), (NULL, '75', b'0'), (NULL, '75', b'0'),
+(NULL, '76', b'1'), (NULL, '76', b'0'), (NULL, '76', b'0'), (NULL, '76', b'0'), (NULL, '76', b'0'),
+(NULL, '77', b'1'), (NULL, '77', b'0'), (NULL, '77', b'0'),
+
+-- SE1...
+(NULL, '78', b'1'), (NULL, '78', b'0'), (NULL, '78', b'0'), (NULL, '78', b'0'), (NULL, '78', b'0'),
+(NULL, '79', b'1'), (NULL, '79', b'0'), (NULL, '79', b'0'), (NULL, '79', b'0'),
+(NULL, '80', b'1'), (NULL, '80', b'0'), (NULL, '80', b'0'), (NULL, '80', b'0'), (NULL, '80', b'0'),
+(NULL, '81', b'1'), (NULL, '81', b'0'), (NULL, '81', b'0'), (NULL, '81', b'0'), (NULL, '81', b'0'),
+(NULL, '82', b'1'), (NULL, '82', b'0'), (NULL, '82', b'0'), (NULL, '82', b'0'), (NULL, '82', b'0'),
+(NULL, '83', b'1'), (NULL, '83', b'0'), (NULL, '83', b'0'), (NULL, '83', b'0'), (NULL, '83', b'0'),
+(NULL, '84', b'1'), (NULL, '84', b'0'), (NULL, '84', b'0'), (NULL, '84', b'0'), (NULL, '84', b'0'),
+(NULL, '85', b'1'), (NULL, '85', b'0'), (NULL, '85', b'0'), (NULL, '85', b'0');

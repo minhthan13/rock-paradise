@@ -1,17 +1,469 @@
-a {
-    text-decoration: none;
-    color: black;
-    margin: 0 0.5rem;
+* {
+    box-sizing: border-box;
 }
-i {
-    font-size: 1.5rem;
-    padding: 0.2em;
+body {
+    font-family: Verdana, sans-serif;
+    margin: 0;
 }
+/* .mySlides {
+    display: none;
+} */
+img {
+    vertical-align: middle;
+}
+
 /* header */
-.head-menu {
-    list-style: none;
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
 }
-.head-menu li {
-    padding: 1em 1em 0 1em;
-    font-size: 1.2rem;
+.nav-list {
+    display: flex;
+}
+.nav-item {
+    list-style: none;
+    padding: 10px 25px;
+    position: relative;
+}
+.nav-icon {
+}
+.nav-icon i {
+    margin: 0px 10px;
+    font-size: 20px;
+    color: #000;
+}
+.nav-item a {
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    background: #fff;
+}
+.link::before {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.nav-item:hover a::before {
+    width: 100%;
+}
+ul.sub-menu {
+    position: absolute;
+    padding: 0px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 9%) 0px 10px 20px;
+    top: 40px;
+    left: -10px;
+    width: 90%;
+    padding-left: 35px;
+    display: none;
+    z-index: 1;
+}
+.sub-menu-item {
+    list-style: none;
+    padding: 10px 0px;
+}
+.has-child {
+    position: relative;
+}
+.has-child::before {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    background-color: red;
+}
+.has-child :hover ~ .sub-menu,
+.sub-menu:hover {
+    display: block;
+}
+
+/* Search Input*/
+.container-search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+.search {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    margin-top: 50px;
+    flex: 1 1 auto;
+}
+.search form {
+    width: 80%;
+}
+.search form > input {
+    width: 90%;
+    height: 60px;
+    border: none;
+}
+
+.search form > button,
+.search button {
+    padding-right: 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.search form > button i,
+.search button > i {
+    font-size: 20px;
+}
+.search input:focus {
+    outline: none;
+}
+.search button > i {
+    border: none;
+}
+::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 1em;
+    width: 1em;
+    margin-right: -1em;
+    background: url("path/to/your/cancel-icon.svg") center center no-repeat;
+    background-size: contain;
+}
+.block {
+    display: block;
+}
+.close {
+    display: none;
+}
+/* body */
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    margin: auto;
+    height: 650px;
+}
+.mySlides img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    object-position: center;
+    opacity: 1;
+    filter: brightness(80%);
+}
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev,
+.next {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+/* Title Slide */
+.title {
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+}
+.title h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+.sub-title {
+    margin-top: 20px;
+}
+.link {
+    width: 150px;
+    height: 50px;
+    background: #000;
+    text-align: center;
+    margin: 30px auto 20px;
+}
+.link a {
+    color: #fff;
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+}
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+/* 
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  } */
+
+/* On smaller screens, decrease text size */
+/* @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+  } */
+@media only screen and (max-width: 600px) {
+    .prev,
+    .next,
+    .text {
+        font-size: 11px;
+    }
+    .slideshow-container {
+        height: 300px;
+    }
+    .mySlides img {
+        height: 300px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+    .slideshow-container {
+        height: 500px;
+    }
+    .mySlides img {
+        height: 500px;
+    }
+}
+/* Product Container */
+.product-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 30px;
+    margin: 20px 40px;
+}
+.card {
+    width: 100%;
+}
+.card img {
+    width: 100%;
+}
+
+.title-product {
+    margin: 40px auto;
+    text-align: center;
+}
+.name-product {
+    margin-bottom: 10px;
+}
+.price-product {
+    margin: 10px 0px;
+}
+.rate {
+    margin-top: 10px;
+}
+.star {
+    color: #ddd;
+    cursor: pointer;
+}
+
+.selected {
+    color: #ffcc00;
+}
+
+.hover {
+    color: #f1c40f;
+}
+.e-voucher {
+    width: 100%;
+    margin-top: 100px;
+}
+.e-voucher img {
+    width: 100%;
+    height: 500px;
+    object-fit: fill;
+}
+.filter {
+    width: 80%;
+    margin: 20px auto;
+}
+.filter select {
+    width: 20%;
+    height: 40px;
+}
+.gallery {
+    width: 100%;
+}
+.gallery h2 {
+    margin: 30px auto;
+    text-align: center;
+}
+.gallery-list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 80%;
+    gap: 30px;
+    margin: 20px auto;
+}
+.gallery-item {
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+.gallery-item img {
+    width: 100%;
+}
+.gallery-link {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+}
+.gallery-link a {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    padding: 10px 10px;
+    background: #fff;
+}
+.hotspots {
+    margin: 40px auto;
+    width: 100%;
+}
+.hotspots-title {
+    width: 80%;
+    margin: 20px auto;
+}
+.hotspots-wrapper {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+.hotspots-img {
+    width: 50%;
+}
+.hotspots-img img {
+    width: 100%;
+}
+.hotspots-content {
+    width: 50%;
+    padding: 30px 0px 30px 40px;
+}
+.hotspots-content h3 {
+    margin: 10px 0px;
+}
+.hotspots-content a {
+    padding: 10px 20px;
+    text-decoration: none;
+    background: #000;
+    color: #fff;
+}
+.hotspots-content p {
+    margin: 0 0 15px;
+}
+.hotspots-content p:nth-child(5) {
+    margin-bottom: 30px;
+}
+/* Scroll To Top */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+#scrollToTopBtn i {
+    color: #000;
+    height: 100%;
+    width: 100%;
+}
+/* footer */
+
+.footer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2f466c;
+    padding: 10px;
+}
+.item {
+    float: left;
+}
+.title-footer {
+    font-size: 22px;
+    font-weight: 1000;
+    margin-left: 40px;
+    color: #fffffe;
+}
+.item > ul > li {
+    list-style: none;
+    font-size: 16px;
+    margin: 15px 0px;
+    color: #d8dce3;
+}
+.dow-app {
+    border: 2px solid #fffffe;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+.dow-app p {
+    margin: 5px 0px 0px 30px;
+    color: #fffffe;
+}
+.social-icon {
+    width: 250px;
+    height: 40px;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+.social-icon i {
+    font-size: 30px;
+    margin-right: 15px;
+    color: #fffffe;
+    cursor: pointer;
 }
