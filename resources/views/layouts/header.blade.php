@@ -25,18 +25,25 @@
     </div>
     <div class="nav-icon">
         <a href=""><i class="fa-regular fa-user"></i></a>
-        <i class="fa-solid fa-magnifying-glass" onclick="search()"></i>
-        <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-bag-shopping"></i>
     </div>
 </div>
 <div class="container-search close">
     <div class="search">
         <form action="">
-            <button type="submit">
-                <i class="fa-solid fa-magnifying-glass" onclick="search()"></i>
-            </button>
-            <input type="search" placeholder="Search Our Store" />
+            <button type="submit"><i class="fa-solid fa-magnifying-glass" onclick="search()"></i></button>
+            <input type="text" placeholder="Search Our Store">
         </form>
-        <button onclick="Close()"><i class="fa-solid fa-xmark"></i></button>
+        <button class="closeModel"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+</div>
+<div class="container-cart close">
+    <div class="cart-box">
+        <div class="header-cart-box">
+            <p>YOUR CART</p>
+            <i class="fa-solid fa-xmark xmark-cart"></i>
+        </div>
+        <hr>
     </div>
 </div>

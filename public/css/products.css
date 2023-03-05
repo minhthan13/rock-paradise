@@ -1,0 +1,32 @@
+.title-allProduct {
+    text-align: center;
+    margin: 40px 0px;
+}
+.select {
+    margin: 20px 40px;
+    text-align: right;
+}
+.select select {
+    height: 40px;
+    width: 20%;
+    margin-right: 0px;
+}
+/* Pagination */
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0px 40px 0px;
+}
+.pagination-item {
+    margin: 0px 16px;
+}
+.pagination-item-link {
+    display: block;
+    text-decoration: none;
+    color: #939393;
+    min-width: 40px;
+    text-align: center;
+    border-radius: 2px;
+}

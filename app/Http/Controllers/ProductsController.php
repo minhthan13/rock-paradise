@@ -17,7 +17,12 @@ class ProductsController extends Controller
     }
 
     public function products(){
-        return view('products');
+        $query = DB::table('product')
+        ->join('image','product.product_id','=','image.product_id')
+        ->where('image.default_image','=','1')
+        ->get();
+        return view('products',['products'=>$query]);
+
     }
     public function product($id){
         $query = DB::table('product')->where('product.product_id','='.$id)->get();
