@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('main')
+    <script src="{{ asset('js/slide.js') }}" defer></script>
+
     <div class="slideshow-container">
         <div class="mySlides fade">
             <div class="title">
@@ -46,7 +48,7 @@
                 <img src="{{ asset('images/product/A101/' . $pro->image_id . '.jpg') }}" alt="" width="400px"
                     height="400px" />
                 <p class="name-product">Zodiac Crystal Set</p>
-                <span class="price-product">24.000$</span>
+                <span class="price-product">{{ $pro->price }}$</span>
                 <div class="rate">
                     <span class="star"><i class="fa-solid fa-star"></i></span>
                     <span class="star"><i class="fa-solid fa-star"></i></span>
@@ -57,126 +59,13 @@
             </div>
         @endforeach
 
-        {{-- <div class="card">
-            <img src="data-eproject/data-eproject/Amethyst/a1010.jpg" alt="" />
-            <p class="name-product">Zodiac Crystal Set</p>
-            <span class="price-product">24.000$</span>
-            <div class="rate">
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-            </div>
-        </div>
-        <div class="card">
-            <img src="data-eproject/data-eproject/Amethyst/a1010.jpg" alt="" />
-            <p class="name-product">Zodiac Crystal Set</p>
-            <span class="price-product">24.000$</span>
-            <div class="rate">
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-            </div>
-        </div>
-        <div class="card">
-            <img src="data-eproject/data-eproject/Amethyst/a1010.jpg" alt="" />
-            <p class="name-product">Zodiac Crystal Set</p>
-            <span class="price-product">24.000$</span>
-            <div class="rate">
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-            </div>
-        </div>
-        <div class="card">
-            <img src="data-eproject/data-eproject/Amethyst/a1010.jpg" alt="" />
-            <p class="name-product">Zodiac Crystal Set</p>
-            <span class="price-product">24.000$</span>
-            <div class="rate">
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-            </div>
-        </div> --}}
+
     </div>
     <div class="link">
         <a href="#">Shop All</a>
     </div>
     <div class="e-voucher">
         <img src="https://i.etsystatic.com/16874044/r/il/661143/3428144869/il_570xN.3428144869_iovn.jpg" alt="" />
-    </div>
-    <div class="gallery">
-        <h2 class="title-gallery">Gallery</h2>
-        <div class="filter">
-            <select>
-                <option value="">----Select----</option>
-                <option value="">Gia tu ca den thap</option>
-                <option value="">Gia tu thap den cao</option>
-            </select>
-        </div>
-        <div class="gallery-list">
-            <div class="gallery-item">
-                <img src="data-eproject/data-eproject/Crytal-Quartz/q1010.jpg" alt="" />
-                <span class="gallery-link">
-                    <a href="#"> Amethyst</a>
-                </span>
-            </div>
-            <div class="gallery-item">
-                <img src="data-eproject/data-eproject/Crytal-Quartz/q1010.jpg" alt="" />
-                <div class="gallery-link">
-                    <a href="#">Amethyst Amethyst</a>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="data-eproject/data-eproject/Crytal-Quartz/q1010.jpg" alt="" />
-                <div class="gallery-link">
-                    <a href="#">Amethyst Amethyst</a>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="data-eproject/data-eproject/Crytal-Quartz/q1010.jpg" alt="" />
-                <div class="gallery-link">
-                    <a href="#">Amethyst Amethyst</a>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="data-eproject/data-eproject/Crytal-Quartz/q1010.jpg" alt="" />
-                <div class="gallery-link">
-                    <a href="#">Amethyst Amethyst</a>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="data-eproject/data-eproject/Crytal-Quartz/q1010.jpg" alt="" />
-                <div class="gallery-link">
-                    <a href="#">Amethyst</a>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="data-eproject/data-eproject/Crytal-Quartz/q1010.jpg" alt="" />
-                <div class="gallery-link">
-                    <a href="#">Amethyst Amethyst</a>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="data-eproject/data-eproject/Crytal-Quartz/q1010.jpg" alt="" />
-                <div class="gallery-link">
-                    <a href="#">Amethyst Amethyst</a>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="data-eproject/data-eproject/Crytal-Quartz/q1010.jpg" alt="" />
-                <div class="gallery-link">
-                    <a href="#">Amethyst Amethyst</a>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="hotspots">
         <h2 class="hotspots-title">THE LIFESTYLE EDIT</h2>
@@ -212,5 +101,4 @@
     </div>
     <br />
     <hr />
-    <button id="scrollToTopBtn">Scroll to top</button>
 @endsection

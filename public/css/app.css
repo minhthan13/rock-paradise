@@ -320,42 +320,7 @@ ul.sub-menu {
     width: 20%;
     height: 40px;
 }
-.gallery {
-    width: 100%;
-}
-.gallery h2 {
-    margin: 30px auto;
-    text-align: center;
-}
-.gallery-list {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    width: 80%;
-    gap: 30px;
-    margin: 20px auto;
-}
-.gallery-item {
-    width: 100%;
-    position: relative;
-    text-align: center;
-}
-.gallery-item img {
-    width: 100%;
-}
-.gallery-link {
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    left: 10%;
-    right: 10%;
-}
-.gallery-link a {
-    text-decoration: none;
-    color: #000;
-    display: inline-block;
-    padding: 10px 10px;
-    background: #fff;
-}
+
 .hotspots {
     margin: 40px auto;
     width: 100%;

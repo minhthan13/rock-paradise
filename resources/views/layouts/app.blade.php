@@ -21,6 +21,7 @@
     <footer>
         @include('layouts.footer')
     </footer>
+    <button id="scrollToTopBtn">Scroll to top</button>
 </body>
 
 </html>
