@@ -1,12 +1,14 @@
 <div class="navbar">
     <div class="logo-navbar">
-        <img src="{{ asset('images/logo.avif') }}" alt="logo" />
+        <a href="/">
+            <img src="{{ asset('images/logo.avif') }}" alt="logo" />
+        </a>
     </div>
     <div class="menu-navbar">
         <ul class="nav-list">
             <li class="nav-item"><a class="link" href="/">Home</a></li>
             <li class="nav-item has-child">
-                <a class="link" href="">Product</a>
+                <a class="link" href="/products">Product</a>
                 <ul class="sub-menu">
                     @foreach ($cate as $c)
                         <li class="sub-menu-item"><a href="#">{{ $c->name }}</a></li>

@@ -8,7 +8,7 @@
                 <h2>Free Gift</h2>
                 <div class="sub-title">with purchase of $25 or more. RETAIL only</div>
                 <div class="link">
-                    <a href="#">Shop All</a>
+                    <a href="/products">Shop All</a>
                 </div>
             </div>
             <img
@@ -19,7 +19,7 @@
                 <h2>Free Gift</h2>
                 <div class="sub-title">with purchase of $25 or more. RETAIL only</div>
                 <div class="link">
-                    <a href="#">Shop All</a>
+                    <a href="/products">Shop All</a>
                 </div>
             </div>
             <img
@@ -31,7 +31,7 @@
                 <h2>Free Gift</h2>
                 <div class="sub-title">with purchase of $25 or more. RETAIL only</div>
                 <div class="link">
-                    <a href="#">Shop All</a>
+                    <a href="/products">Shop All</a>
                 </div>
             </div>
             <img
@@ -41,13 +41,13 @@
         <a class="prev" onclick="plusSlides(-1)"></a>
         <a class="next" onclick="plusSlides(1)"></a>
     </div>
-    <h2 class="title-product">Product</h2>
+    <h2 class="title-product"> Product</h2>
     <div class="product-container">
         @foreach ($home as $pro)
             <div class="card">
-                <img src="{{ asset('images/product/A101/' . $pro->image_id . '.jpg') }}" alt="" width="400px"
-                    height="400px" />
-                <p class="name-product">Zodiac Crystal Set</p>
+                <img src="{{ asset('images/product/' . $pro->name . '/' . $pro->image_id . '.jpg') }}" alt=""
+                    width="400px" height="400px" />
+                <p class="name-product">{{ $pro->title }}</p>
                 <span class="price-product">{{ $pro->price }}$</span>
                 <div class="rate">
                     <span class="star"><i class="fa-solid fa-star"></i></span>
@@ -62,7 +62,7 @@
 
     </div>
     <div class="link">
-        <a href="#">Shop All</a>
+        <a href="/products">Shop All</a>
     </div>
     <div class="e-voucher">
         <img src="https://i.etsystatic.com/16874044/r/il/661143/3428144869/il_570xN.3428144869_iovn.jpg" alt="" />
@@ -95,7 +95,7 @@
                     diseases of the lungs and respiratory tract, skin conditions,
                     cellular disorders and diseases of the digestive tract.
                 </p>
-                <a href="#">SHOP</a>
+                <a href="/products">SHOP</a>
             </div>
         </div>
     </div>
