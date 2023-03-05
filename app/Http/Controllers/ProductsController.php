@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
-    public function products(){
-        $query = DB::table('product')->get();
-        return view('layouts.body',['products'=>$query]);
+    public function home(){
+        $query = DB::table('product')->join('image','product.product_id','=','image.product_id')->where('image.image_id','<','5')->get();
+        return view('layouts.body',['home'=>$query]);
     }
     public function product($id){
         $query = DB::table('product')->where('product.product_id','='.$id)->get();

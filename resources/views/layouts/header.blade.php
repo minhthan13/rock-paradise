@@ -1,10 +1,10 @@
 <div class="navbar">
     <div class="logo-navbar">
-        <img src="{{ asset('images/logo.avif') }}" alt="" />
+        <img src="{{ asset('images/logo.avif') }}" alt="logo" />
     </div>
     <div class="menu-navbar">
         <ul class="nav-list">
-            <li class="nav-item"><a class="link" href="">Home</a></li>
+            <li class="nav-item"><a class="link" href="/">Home</a></li>
             <li class="nav-item has-child">
                 <a class="link" href="">Product</a>
                 <ul class="sub-menu">
@@ -14,11 +14,11 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="link" href="">Best Selling</a>
+                <a class="link" href="/best-selling">Best Selling</a>
             </li>
-            <li class="nav-item"><a class="link" href="">Contact</a></li>
-            <li class="nav-item"><a class="link" href="">About Us</a></li>
-            <li class="nav-item"><a class="link" href="">FAQ</a></li>
+            <li class="nav-item"><a class="link" href="/contact">Contact</a></li>
+            <li class="nav-item"><a class="link" href="/about">About Us</a></li>
+            <li class="nav-item"><a class="link" href="/FAQ">FAQ</a></li>
         </ul>
     </div>
     <div class="nav-icon">

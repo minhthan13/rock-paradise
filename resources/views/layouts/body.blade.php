@@ -41,7 +41,23 @@
     </div>
     <h2 class="title-product">Product</h2>
     <div class="product-container">
-        <div class="card">
+        @foreach ($home as $pro)
+            <div class="card">
+                <img src="{{ asset('images/product/A101/' . $pro->image_id . '.jpg') }}" alt="" width="400px"
+                    height="400px" />
+                <p class="name-product">Zodiac Crystal Set</p>
+                <span class="price-product">24.000$</span>
+                <div class="rate">
+                    <span class="star"><i class="fa-solid fa-star"></i></span>
+                    <span class="star"><i class="fa-solid fa-star"></i></span>
+                    <span class="star"><i class="fa-solid fa-star"></i></span>
+                    <span class="star"><i class="fa-solid fa-star"></i></span>
+                    <span class="star"><i class="fa-solid fa-star"></i></span>
+                </div>
+            </div>
+        @endforeach
+
+        {{-- <div class="card">
             <img src="data-eproject/data-eproject/Amethyst/a1010.jpg" alt="" />
             <p class="name-product">Zodiac Crystal Set</p>
             <span class="price-product">24.000$</span>
@@ -88,7 +104,7 @@
                 <span class="star"><i class="fa-solid fa-star"></i></span>
                 <span class="star"><i class="fa-solid fa-star"></i></span>
             </div>
-        </div>
+        </div> --}}
     </div>
     <div class="link">
         <a href="#">Shop All</a>
