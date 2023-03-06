@@ -28,7 +28,7 @@
         <div class="product-content">
 
 
-            <h2 class="product-title">{{ $product[0]->name }}</h2>
+            <h2 class="product-title">{{ $product[0]->title }}</h2>
             <div class="product-rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
