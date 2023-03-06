@@ -27,7 +27,7 @@ class ProductsController extends Controller
     public function product($id){
         $query = DB::table('product')
         ->join('image','product.product_id','=','image.product_id')
-        ->select('product.name','product.price','image.image_id','product.description')
+        // ->select('product.name','product.price','image.image_id','product.description')
         ->where('product.name','=',$id)
         // ->distinct()
         ->get();

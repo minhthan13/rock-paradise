@@ -6,49 +6,22 @@
         <div class="product-imgs">
             <div class="img-display">
                 <div class="img-showcase">
-                    <img src="https://cdn.shopify.com/s/files/1/1552/6795/products/il_794xN.802093538_htgm_360x.webp?v=1677102103"
-                        alt="">
-                    <img src="https://cdn.shopify.com/s/files/1/1552/6795/products/amethystring_360x.webp?v=1658851640"
-                        alt="">
-                    <img src="https://cdn.shopify.com/s/files/1/1552/6795/products/il_794xN.801859479_r2en_360x.webp?v=1677877581"
-                        alt="">
-                    <img src="https://cdn.shopify.com/s/files/1/1552/6795/products/03-thumbnail_IMG_1554_360x.jpg?v=1670818379"
-                        alt="">
-                    <img src="https://cdn.shopify.com/s/files/1/1552/6795/products/il_794xN.801859479_r2en_360x.webp?v=1677877581"
-                        alt="">
+                    @foreach ($product as $p)
+                        <img src="{{ asset('images/product/' . $p->name . '/' . $p->image_id . '.jpg') }}"
+                            alt="{{ $p->image_id }}">
+                    @endforeach
                 </div>
             </div>
             <div class="img-select">
-                <div class="img-item">
-                    <a href="#" data-id="1">
-                        <img src="https://cdn.shopify.com/s/files/1/1552/6795/products/il_794xN.802093538_htgm_360x.webp?v=1677102103"
-                            alt="">
-                    </a>
-                </div>
-                <div class="img-item">
-                    <a href="#" data-id="2">
-                        <img src="https://cdn.shopify.com/s/files/1/1552/6795/products/amethystring_360x.webp?v=1658851640"
-                            alt="">
-                    </a>
-                </div>
-                <div class="img-item">
-                    <a href="#" data-id="3">
-                        <img src="https://cdn.shopify.com/s/files/1/1552/6795/products/il_794xN.801859479_r2en_360x.webp?v=1677877581"
-                            alt="">
-                    </a>
-                </div>
-                <div class="img-item">
-                    <a href="#" data-id="4">
-                        <img src="https://cdn.shopify.com/s/files/1/1552/6795/products/03-thumbnail_IMG_1554_360x.jpg?v=1670818379"
-                            alt="">
-                    </a>
-                </div>
-                <div class="img-item">
-                    <a href="#" data-id="5">
-                        <img src="https://cdn.shopify.com/s/files/1/1552/6795/products/il_794xN.801859479_r2en_360x.webp?v=1677877581"
-                            alt="">
-                    </a>
-                </div>
+                @foreach ($product as $i)
+                    <div class="img-item">
+                        <a href="#" data-id="{{ $loop->iteration }}">
+                            <img src="{{ asset('images/product/' . $i->name . '/' . $i->image_id . '.jpg') }}"
+                                alt="{{ $i->image_id }}">
+                        </a>
+                    </div>
+                @endforeach
+
             </div>
         </div>
         <!-- card right -->
@@ -64,14 +37,13 @@
                 <i class="fas fa-star-half-alt"></i>
             </div>
             <div class="product-price">
-                <p class="new-price">Price: <span>${{ $product[0]->price }}.00</span></p>
+                <p class="new-price">Price: <span>${{ number_format($product[0]->price) }}.00</span></p>
             </div>
 
             <div class="product-desc">
                 <h2>DECRIPSTION: </h2>
                 <p>{{ $product[0]->description }}</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos,
-                    labore suscipit. Unde.</p>
+
             </div>
 
             <div class="purchase-info">
