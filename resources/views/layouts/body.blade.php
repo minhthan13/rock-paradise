@@ -12,7 +12,7 @@
                 </div>
             </div>
             <img
-                src="https://cdn.shopify.com/s/files/1/1552/6795/files/franco-antonio-giovanella-g95sf8-fEQg-unsplash.jpg?v=1672425027&width=352" />
+                src="https://cdn.shopify.com/s/files/1/1552/6795/files/04-IMG_E8333_1800x1800_c08ad7fa-eb1b-4f74-a630-12321c9249c8.webp?v=1667355413&width=1920" />
         </div>
         <div class="mySlides fade">
             <div class="title">
@@ -38,24 +38,33 @@
                 src="https://cdn.shopify.com/s/files/1/1552/6795/files/pexels-karolina-grabowska-6825335.jpg?v=1672425640&width=1920" />
         </div>
 
-        <a class="prev" onclick="plusSlides(-1)"></a>
-        <a class="next" onclick="plusSlides(1)"></a>
+        <a class="prev" onclick="plusSlides(-1)">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
+        <a class="next" onclick="plusSlides(1)">
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
     </div>
     <h2 class="title-product"> Product</h2>
     <div class="product-container">
         @foreach ($home as $pro)
             <div class="card">
-                <img src="{{ asset('images/product/' . $pro->name . '/' . $pro->image_id . '.jpg') }}" alt=""
-                    width="400px" height="400px" />
-                <p class="name-product">{{ $pro->title }}</p>
-                <span class="price-product">{{ $pro->price }}$</span>
-                <div class="rate">
-                    <span class="star"><i class="fa-solid fa-star"></i></span>
-                    <span class="star"><i class="fa-solid fa-star"></i></span>
-                    <span class="star"><i class="fa-solid fa-star"></i></span>
-                    <span class="star"><i class="fa-solid fa-star"></i></span>
-                    <span class="star"><i class="fa-solid fa-star"></i></span>
-                </div>
+
+                <a href="{{ url('products/' . $pro->name . '.html') }}" class="detail">
+
+
+                    <img src="{{ asset('images/product/' . $pro->name . '/' . $pro->image_id . '.jpg') }}" alt=""
+                        width="400px" height="400px" />
+                    <p class="name-product">{{ $pro->title }}</p>
+                    <span class="price-product">{{ $pro->price }}$</span>
+                    <div class="rate">
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                    </div>
+                </a>
             </div>
         @endforeach
 
@@ -99,6 +108,4 @@
             </div>
         </div>
     </div>
-    <br />
-    <hr />
 @endsection

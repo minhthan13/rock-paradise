@@ -11,7 +11,7 @@ Route::get('/',[ProductsController::class,'home']);
 // products
 Route::get('/products',[ProductsController::class,'products'] );
 //product detail
-Route::get('/product/{id}',[ProductsController::class,'product'] );
+Route::get('/products/{id}.html',[ProductsController::class,'product'] );
 
 
 //menu homepage
