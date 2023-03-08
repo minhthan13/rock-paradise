@@ -2,6 +2,7 @@
     <div class="logo-navbar">
         <a href="/">
             <img src="{{ asset('images/logo.avif') }}" alt="logo" />
+
         </a>
     </div>
     <div class="menu-navbar">
@@ -11,7 +12,7 @@
                 <a class="link" href="/products">Product</a>
                 <ul class="sub-menu">
                     @foreach ($cate as $c)
-                        <li class="sub-menu-item"><a href="#">{{ $c->name }}</a></li>
+                        <li class="sub-menu-item"><a href="/product/{{ $c->name }}">{{ $c->name }}</a></li>
                     @endforeach
                 </ul>
             </li>
@@ -24,9 +25,10 @@
         </ul>
     </div>
     <div class="nav-icon">
-        <a href=""><i class="fa-regular fa-user"></i></a>
+        <a href="login/login.html"><i class="fa-regular fa-user"></i></a>
         <i class="fa-solid fa-magnifying-glass"></i>
         <i class="fa-solid fa-bag-shopping"></i>
+        <i class="fa-solid fa-bars"></i>
     </div>
 </div>
 <div class="container-search close">

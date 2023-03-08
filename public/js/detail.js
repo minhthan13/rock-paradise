@@ -20,4 +20,4 @@ function slideImage() {
     }px)`;
 }
 
-window.addEventListener("resize", slideImage);
+// window.addEventListener("resize", slideImage);

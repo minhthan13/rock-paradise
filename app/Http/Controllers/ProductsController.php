@@ -35,4 +35,18 @@ class ProductsController extends Controller
         
         return view('productdetail',['product'=>$query]);
     }
+    public function cateProduct($name){
+        $query = DB::table('product')
+        ->join('category','product.category_id','=','category.category_id')
+        ->join('image','product.product_id','=','image.product_id')
+        ->select('product.name','image.image_id','product.title','product.price')
+        
+        ->where('category.name','=',$name)
+        ->where('image.default_image','=','1')
+        ->groupBy( 'product.name','image.image_id','product.title','product.price')
+        ->get();
+        
+        return view('cateproduct',['cate'=>$query,'name'=>$name]);
+
+    }
 }

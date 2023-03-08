@@ -12,7 +12,8 @@ Route::get('/',[ProductsController::class,'home']);
 Route::get('/products',[ProductsController::class,'products'] );
 //product detail
 Route::get('/products/{id}.html',[ProductsController::class,'product'] );
-
+//cate product
+Route::get('/product/{name}',[ProductsController::class,'cateProduct'] );
 
 //menu homepage
 Route::get('/best-selling',function (){ return view('menu.bestselling');});
