@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/products.css') }}">
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/detail.js') }}" defer></script>
 </head>

@@ -26,13 +26,9 @@ class ProductsController extends Controller
     }
     public function product($id){
         $query = DB::table('product')
-        ->join('image','product.product_id','=','image.product_id')
-        // ->select('product.name','product.price','image.image_id','product.description')
+        ->join('image','product.product_id','=','image.product_id')  
         ->where('product.name','=',$id)
-        // ->distinct()
         ->get();
-        // dd($query);
-        
         return view('productdetail',['product'=>$query]);
     }
     public function cateProduct($name){
@@ -40,12 +36,10 @@ class ProductsController extends Controller
         ->join('category','product.category_id','=','category.category_id')
         ->join('image','product.product_id','=','image.product_id')
         ->select('product.name','image.image_id','product.title','product.price')
-        
         ->where('category.name','=',$name)
         ->where('image.default_image','=','1')
         ->groupBy( 'product.name','image.image_id','product.title','product.price')
         ->get();
-        
         return view('cateproduct',['cate'=>$query,'name'=>$name]);
 
     }
