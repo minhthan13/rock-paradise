@@ -14,9 +14,11 @@ Route::get('/products',[ProductsController::class,'products'] );
 Route::get('/products/{id}.html',[ProductsController::class,'product'] );
 //cate product
 Route::get('/product/{name}',[ProductsController::class,'cateProduct'] );
+//search
+Route::post('product/search', [SearchController::class, "search"]);
 
 //menu homepage
-Route::get('/best-selling',function (){ return view('menu.bestselling');});
+Route::get('/best-selling',[ProductsController::class,'bestSelling']);
 Route::get('/contact',function (){ return view('menu.contact');});
 Route::get('/about',function (){ return view('menu.about');});
 Route::get('/FAQ',function (){ return view('menu.FAQ');});

@@ -33,9 +33,11 @@
 </div>
 <div class="container-search close">
     <div class="search">
-        <form action="">
+        <form method="post" action="/product/search" role="search">
+            @csrf
             <button type="submit"><i class="fa-solid fa-magnifying-glass" onclick="search()"></i></button>
-            <input type="text" placeholder="Search Our Store">
+            <input type="text" name="product" placeholder="Search Our Store"
+                value="{{ isset($title) ? $title : '' }}">
         </form>
         <button class="closeModel"><i class="fa-solid fa-xmark"></i></button>
     </div>

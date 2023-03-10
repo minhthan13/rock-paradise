@@ -20,8 +20,9 @@ class ProductsController extends Controller
         $query = DB::table('product')
         ->join('image','product.product_id','=','image.product_id')
         ->where('image.default_image','=','1')
-        ->get();
-        return view('products',['products'=>$query]);
+        ->orderBy("product.product_id",'ASC');
+        $productsPerPage = $query->paginate(12);
+        return view('products',['products'=>$productsPerPage]);
 
     }
     public function product($id){
@@ -41,6 +42,17 @@ class ProductsController extends Controller
         ->groupBy( 'product.name','image.image_id','product.title','product.price')
         ->get();
         return view('cateproduct',['cate'=>$query,'name'=>$name]);
+
+    }
+
+    public function bestSelling(){
+        $query = DB::table('product')
+        ->join('image','product.product_id','=','image.product_id')
+        ->where('image.default_image','=','1')
+        ->where('product.is_top','=','1')
+        ->orderBy("product.product_id",'DESC');
+        $productsPerPage = $query->paginate(12);
+        return view('menu.bestselling',['bsell'=>$productsPerPage]);
 
     }
 }

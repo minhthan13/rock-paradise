@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('main')
-    <h2 class="title-allProduct">ALL PRODUCT</h2>
+    <h2 class="title-allProduct">Search: {{ $title }}</h2>
     <div class="select">
         <select name="" id="" class="filter">
             <option value="" selected>Thap den cao</option>
@@ -10,7 +10,7 @@
         </select>
     </div>
     <div class="product-container">
-        @foreach ($products as $pro)
+        @foreach ($search as $pro)
             <div class="card">
                 <a href="{{ url('products/' . $pro->name . '.html') }}" class="detail">
                     <img src="{{ asset('images/product/' . $pro->name . '/' . $pro->image_id . '.jpg') }}"
@@ -32,23 +32,23 @@
 
     <div class="pagination">
         {{-- previous --}}
-        @if ($products->onFirstPage())
+        @if ($search->onFirstPage())
             <span>&laquo;</span>
         @else
-            <a href="{{ $products->previousPageUrl() }}" rel="prev">&laquo;</a>
+            <a href="{{ $search->previousPageUrl() }}" rel="prev">&laquo;</a>
         @endif
         {{-- Hiển thị các số trang --}}
-        @for ($i = 1; $i <= $products->lastPage(); $i++)
-            @if ($i == $products->currentPage())
+        @for ($i = 1; $i <= $search->lastPage(); $i++)
+            @if ($i == $search->currentPage())
                 <span class="active">{{ $i }}</span>
             @else
-                <a href="{{ $products->url($i) }}"
+                <a href="{{ $search->url($i) }}"
                     class="{{ Request::fullUrlIs(url('/products') . '?page=' . $i . '*') ? 'active' : '' }}">{{ $i }}</a>
             @endif
         @endfor
         {{-- next --}}
-        @if ($products->hasMorePages())
-            <a href="{{ $products->nextPageUrl() }}" rel="next">&raquo;</a>
+        @if ($search->hasMorePages())
+            <a href="{{ $search->nextPageUrl() }}" rel="next">&raquo;</a>
         @else
             <span>&raquo;</span>
         @endif
