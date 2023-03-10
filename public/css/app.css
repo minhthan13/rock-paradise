@@ -327,6 +327,9 @@ ul.sub-menu {
     align-items: center;
     margin-bottom: 20px;
     margin-right: 20px;
+    box-shadow: 0 2px 4px grey;
+    border-radius: 8px;
+    background-color: #fff;
 }
 
 .card {
@@ -338,11 +341,8 @@ ul.sub-menu {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px grey;
 }
-.card:hover {
+.detail:hover {
     transform: translateY(-4px);
     transition: all 0.25s ease-in-out;
 }
