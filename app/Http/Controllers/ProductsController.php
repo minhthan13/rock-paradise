@@ -40,8 +40,9 @@ class ProductsController extends Controller
         ->where('category.name','=',$name)
         ->where('image.default_image','=','1')
         ->groupBy( 'product.name','image.image_id','product.title','product.price')
-        ->get();
-        return view('cateproduct',['cate'=>$query,'name'=>$name]);
+        ->orderBy("product.product_id",'ASC');
+        $productsPerPage = $query->paginate(12);
+        return view('cateproduct',['cate'=>$productsPerPage,'name'=>$name]);
 
     }
 

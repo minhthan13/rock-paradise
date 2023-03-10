@@ -306,51 +306,79 @@ ul.sub-menu {
     }
 }
 /* Product Container */
+.title-product {
+    padding-top: 1em;
+    text-align: center;
+}
 .product-container {
     text-align: center;
     display: flex;
     margin: 20px 20px;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
+.detail {
+    max-height: 650px;
+    flex-basis: calc(25% - 20px);
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
 .card {
-    width: calc(25% - 20px);
-    margin: 10px 10px;
+    box-sizing: border-box;
+    flex-grow: 1;
+    width: 100%;
+    max-height: 650px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px grey;
 }
-.card:nth-child(-n + 4) {
-    margin-right: 10px;
-}
-.card:nth-child(4n) {
-    margin-right: 0;
-    margin-left: auto;
+.card:hover {
+    transform: translateY(-4px);
+    transition: all 0.25s ease-in-out;
 }
 
 .card img {
+    object-fit: cover;
     width: 100%;
-}
-.card .detail {
-    width: inherit;
-    height: inherit;
-    text-decoration: none;
-    color: #000;
+    height: 450px;
 }
 
-.title-product {
-    margin: 40px auto;
-    text-align: center;
-}
 .name-product {
-    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    align-self: center;
 }
+
 .price-product {
-    margin: 10px 0px;
+    margin-top: 1em;
+    font-weight: bold;
+    align-self: center;
 }
+
 .rate {
-    margin-top: 10px;
+    margin: 10px 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
 }
+
 .star {
     color: #ddd;
     cursor: pointer;
+    font-size: 20px;
+    padding-right: 5px;
 }
 
 .selected {
@@ -360,6 +388,7 @@ ul.sub-menu {
 .hover {
     color: #f1c40f;
 }
+
 .e-voucher {
     width: 100%;
     margin-top: 100px;
