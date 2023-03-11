@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('main')
+    <script src="{{ asset('js/detail.js') }}" defer></script>
     <div class="card-wrapper">
-
         <!-- card left -->
         <div class="product-imgs">
             <div class="img-display">
@@ -72,6 +72,5 @@
                 </a>
             </div>
         </div>
-
     </div>
 @endsection

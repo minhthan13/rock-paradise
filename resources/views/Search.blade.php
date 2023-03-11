@@ -11,8 +11,8 @@
     </div>
     <div class="product-container">
         @foreach ($search as $pro)
-            <div class="card">
-                <a href="{{ url('products/' . $pro->name . '.html') }}" class="detail">
+            <a href="{{ url('products/' . $pro->name . '.html') }}" class="detail">
+                <div class="card">
                     <img src="{{ asset('images/product/' . $pro->name . '/' . $pro->image_id . '.jpg') }}"
                         alt="{{ $pro->name }}" width="400px" height="400px" />
                     <p class="name-product">{{ $pro->title }}</p>
@@ -24,8 +24,8 @@
                         <span class="star"><i class="fa-solid fa-star"></i></span>
                         <span class="star"><i class="fa-solid fa-star"></i></span>
                     </div>
-                </a>
-            </div>
+                </div>
+            </a>
         @endforeach
 
     </div>
