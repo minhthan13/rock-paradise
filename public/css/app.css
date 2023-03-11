@@ -202,6 +202,7 @@ ul.sub-menu {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    z-index: 1;
 }
 
 /* Position the "next button" to the right */
@@ -230,7 +231,7 @@ ul.sub-menu {
 .title {
     position: absolute;
     top: 35%;
-    left: 40%;
+    width: 100%;
     text-align: center;
     color: #fff;
     z-index: 1;
@@ -263,48 +264,7 @@ ul.sub-menu {
     animation-name: fade;
     animation-duration: 1.5s;
 }
-/* 
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  } */
 
-/* On smaller screens, decrease text size */
-/* @media only screen and (max-width: 300px) {
-    .prev, .next,.text {font-size: 11px}
-  } */
-@media only screen and (max-width: 600px) {
-    .prev,
-    .next,
-    .text {
-        font-size: 11px;
-    }
-    .slideshow-container {
-        height: 300px;
-    }
-    .mySlides img {
-        height: 300px;
-    }
-}
-
-@media only screen and (min-width: 601px) and (max-width: 800px) {
-    .slideshow-container {
-        height: 500px;
-    }
-    .mySlides img {
-        height: 500px;
-    }
-}
-@media screen and (max-width: 1024px) {
-    .card {
-        width: calc(50% - 20px);
-    }
-}
-@media screen and (max-width: 700px) {
-    .card {
-        width: calc(100%);
-    }
-}
 /* Product Container */
 .title-product {
     padding-top: 1em;
@@ -314,43 +274,34 @@ ul.sub-menu {
     text-align: center;
     display: flex;
     margin: 20px 20px;
-    justify-content: flex-start;
     flex-wrap: wrap;
 }
 .detail {
-    max-height: 650px;
-    flex-basis: calc(25% - 20px);
+    display: block;
+    width: 100%;
     text-decoration: none;
     color: #000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-bottom: 20px;
     margin-right: 20px;
-    box-shadow: 0 2px 4px grey;
-    border-radius: 8px;
     background-color: #fff;
 }
 
 .card {
-    box-sizing: border-box;
-    flex-grow: 1;
-    width: 100%;
-    max-height: 650px;
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    width: calc(25% - 40px);
+    margin: 10px 20px;
+    box-shadow: 0 2px 4px grey;
+    border-radius: 5px;
+    overflow: hidden;
 }
 .detail:hover {
-    transform: translateY(-4px);
+    transform: scale(1.1);
     transition: all 0.25s ease-in-out;
 }
 
 .card img {
     object-fit: cover;
     width: 100%;
-    height: 450px;
+    height: 400px;
 }
 
 .name-product {
@@ -408,15 +359,13 @@ ul.sub-menu {
 }
 
 .hotspots {
-    margin: 40px auto;
-    width: 100%;
+    margin: 40px 20px;
 }
 .hotspots-title {
-    width: 80%;
     margin: 20px auto;
 }
 .hotspots-wrapper {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin: 20px auto;
@@ -526,6 +475,74 @@ i.fa-bars {
 .nav-icon {
     display: flex;
 }
+/* Footer */
+
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #2f466c;
+    padding: 10px;
+}
+.title-footer{
+    font-size: 22px;
+    font-weight: 1000;
+    color: #fffffe;
+    margin-left: 0px;
+}
+.item{
+    width: 33.333%;
+}
+.item >ul >li{
+    list-style: none;
+    font-size: 16px;
+    margin: 15px 0px;
+    color: #d8dce3;
+}
+.item ul{
+    padding-left: 0px;
+}
+.dow-app{
+    border: 2px solid #fffffe;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 0px;
+}
+.dow-app p{
+    margin:5px 0px 0px 30px;
+    color: #fffffe;
+}
+.social-icon{
+    margin-left: 0px;
+}
+.social-icon i{
+    font-size: 30px;
+    margin-right: 15px;
+    color: #fffffe;
+    cursor: pointer;
+}
+.item iframe{
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:640px) {
+    .footer{
+        flex-direction: column;
+    }
+    .item{
+        width: 100%;
+        text-align: center;
+    }
+    .dow-app,
+    .social-icon{
+        margin: 10px auto;
+    }
+    .item iframe{
+        width: 100%;
+        height: 300px;
+    }
+}
 @media screen and (max-width: 640px) {
     .nav-list {
         flex-direction: column;
@@ -567,5 +584,46 @@ i.fa-bars {
     }
     .sub-menu:hover {
         display: none;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .prev,
+    .next,
+    .text {
+        font-size: 11px;
+    }
+    .slideshow-container {
+        height: 300px;
+    }
+    .mySlides img {
+        height: 300px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+    .slideshow-container {
+        height: 500px;
+    }
+    .mySlides img {
+        height: 500px;
+    }
+    .hotspots-wrapper{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .hotspots-img{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .card {
+        width: calc(50% - 40px);
+    }
+    
+}
+@media screen and (max-width: 700px) {
+    .card {
+        width: calc(100%);
     }
 }

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/products.css') }}">
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/detail.js') }}" defer></script>
 </head>
@@ -25,7 +26,7 @@
     <footer>
         @include('layouts.footer')
     </footer>
-    <button id="scrollToTopBtn">Scroll to top</button>
+    <button id="scrollToTopBtn"><i class="fa-solid fa-angle-up"></i></button>
 </body>
 
 </html>

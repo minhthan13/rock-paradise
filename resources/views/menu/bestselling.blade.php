@@ -11,10 +11,11 @@
     </div>
     <div class="product-container">
         @foreach ($bsell as $pro)
-            <a href="{{ url('products/' . $pro->name . '.html') }}" class="detail">
                 <div class="card">
-                    <img src="{{ asset('images/product/' . $pro->name . '/' . $pro->image_id . '.jpg') }}"
+                    <a href="{{ url('products/' . $pro->name . '.html') }}" class="detail">
+                        <img src="{{ asset('images/product/' . $pro->name . '/' . $pro->image_id . '.jpg') }}"
                         alt="{{ $pro->name }}" width="400px" height="400px" />
+                    </a>
                     <p class="name-product">{{ $pro->title }}</p>
                     <span class="price-product">{{ $pro->price }}$</span>
                     <div class="rate">
@@ -25,11 +26,10 @@
                         <span class="star"><i class="fa-solid fa-star"></i></span>
                     </div>
                 </div>
-            </a>
+            
         @endforeach
 
     </div>
-
     <div class="pagination">
         {{-- previous --}}
         @if ($bsell->onFirstPage())

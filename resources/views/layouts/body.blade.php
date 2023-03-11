@@ -48,10 +48,11 @@
     <h2 class="title-product"> Product</h2>
     <div class="product-container">
         @foreach ($home as $pro)
-            <a href="{{ url('products/' . $pro->name . '.html') }}" class="detail">
+            
                 <div class="card">
-                    <img src="{{ asset('images/product/' . $pro->name . '/' . $pro->image_id . '.jpg') }}" alt=""
-                        width="400px" height="400px" />
+                <a href="{{ url('products/' . $pro->name . '.html') }}" class="detail">
+                    <img src="{{ asset('images/product/' . $pro->name . '/' . $pro->image_id . '.jpg') }}" alt="" />
+                </a>
                     <p class="name-product">{{ $pro->title }}</p>
                     <span class="price-product">{{ $pro->price }}$</span>
                     <div class="rate">
@@ -62,7 +63,7 @@
                         <span class="star"><i class="fa-solid fa-star"></i></span>
                     </div>
                 </div>
-            </a>
+            
         @endforeach
 
 
