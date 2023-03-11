@@ -1,0 +1,52 @@
+.form-contact {
+    margin: 0px auto;
+    padding: 0px 40px;
+    max-width: 1000px;
+}
+.container-contact {
+    margin: 0px 40px;
+}
+.contact-text {
+    width: 100%;
+}
+.contact-text p {
+    text-align: center;
+    margin-top: 15px;
+}
+.input-text {
+    margin: 0px auto;
+}
+.input-text input {
+    height: 40px;
+}
+.name-email {
+    display: flex;
+    margin: 10px 0px;
+}
+.name {
+    margin-right: 20px;
+}
+.name,
+.email {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.phone,
+.message {
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.btn {
+    text-align: center;
+}
+.btn button {
+    height: 40px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px 0px;
+}

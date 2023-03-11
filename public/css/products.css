@@ -11,8 +11,93 @@
     width: 20%;
     margin-right: 0px;
 }
-/* Pagination */
 
+/* Product Container */
+.title-product {
+    padding-top: 1em;
+    text-align: center;
+}
+.product-container {
+    text-align: center;
+    display: flex;
+    margin: 20px 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.detail {
+    max-height: 650px;
+    flex-basis: calc(25% - 20px);
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    box-shadow: 0 2px 4px grey;
+    border-radius: 8px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.card {
+    box-sizing: border-box;
+    flex-grow: 1;
+    width: 100%;
+    max-height: 650px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.detail:hover {
+    transform: translateY(-4px);
+    transition: all 0.25s ease-in-out;
+}
+
+.card img {
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+}
+
+.name-product {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    align-self: center;
+}
+
+.price-product {
+    margin-top: 1em;
+    font-weight: bold;
+    align-self: center;
+}
+
+.rate {
+    margin: 10px 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.star {
+    color: #ddd;
+    cursor: pointer;
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+.selected {
+    color: #ffcc00;
+}
+
+.hover {
+    color: #f1c40f;
+}
+
+/* Pagination */
 .pagination {
     display: flex;
     justify-content: center;
@@ -67,4 +152,25 @@ span.active {
     width: inherit;
     font-weight: 600;
     background-color: #d8e5f9;
+}
+
+/* product responsive */
+@media screen and (max-width: 1320px) {
+    .detail {
+        flex-basis: calc(33.33% - 20px);
+        align-items: center;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .product-container {
+        justify-content: space-between;
+    }
+    .detail {
+        flex-basis: calc(50% - 30px);
+    }
+}
+@media screen and (max-width: 860px) {
+    .detail {
+        flex-basis: 100%;
+    }
 }
