@@ -11,9 +11,6 @@ body {
     font-family: Verdana, sans-serif;
     margin: 0;
 }
-/* .mySlides {
-    display: none;
-} */
 img {
     vertical-align: middle;
 }
@@ -89,6 +86,8 @@ ul.sub-menu {
 .has-child :hover ~ .sub-menu,
 .sub-menu:hover {
     display: block;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 .container-cart {
     position: fixed;
@@ -259,19 +258,6 @@ ul.sub-menu {
     display: inline-block;
 }
 /* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {
-        opacity: 0.4;
-    }
-    to {
-        opacity: 1;
-    }
-}
 
 .e-voucher {
     width: 100%;
@@ -548,5 +534,15 @@ i.fa-bars {
     }
     .hotspots-img {
         width: 80%;
+    }
+}
+/* animation  */
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
