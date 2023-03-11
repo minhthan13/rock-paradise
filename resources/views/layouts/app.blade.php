@@ -25,7 +25,12 @@
     <footer>
         @include('layouts.footer')
     </footer>
-    <button id="scrollToTopBtn"><i class="fa-solid fa-angle-up"></i></button>
+    <button id="scrollToTopBtn">
+
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
 </body>
 
 </html>

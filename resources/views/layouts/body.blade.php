@@ -8,7 +8,7 @@
                 <h2>Free Gift</h2>
                 <div class="sub-title">with purchase of $25 or more. RETAIL only</div>
                 <div class="link">
-                    <a href="/products">Shop All</a>
+                    <a href="/products">SHOP ALL</a>
                 </div>
             </div>
             <img
@@ -19,7 +19,7 @@
                 <h2>Free Gift</h2>
                 <div class="sub-title">with purchase of $25 or more. RETAIL only</div>
                 <div class="link">
-                    <a href="/products">Shop All</a>
+                    <a href="/products">SHOP ALL</a>
                 </div>
             </div>
             <img
@@ -31,7 +31,7 @@
                 <h2>Free Gift</h2>
                 <div class="sub-title">with purchase of $25 or more. RETAIL only</div>
                 <div class="link">
-                    <a href="/products">Shop All</a>
+                    <a href="/products">SHOP ALL</a>
                 </div>
             </div>
             <img
@@ -68,7 +68,7 @@
 
     </div>
     <div class="link">
-        <a href="/products">Shop All</a>
+        <a href="/products">SHOP ALL</a>
     </div>
     <div class="e-voucher">
         <img src="https://i.etsystatic.com/16874044/r/il/661143/3428144869/il_570xN.3428144869_iovn.jpg" alt="" />
@@ -101,7 +101,12 @@
                     diseases of the lungs and respiratory tract, skin conditions,
                     cellular disorders and diseases of the digestive tract.
                 </p>
-                <a href="/products">SHOP</a>
+                <div class="link">
+
+                    <a href="/products">
+                        SHOP
+                    </a>
+                </div>
             </div>
         </div>
     </div>
