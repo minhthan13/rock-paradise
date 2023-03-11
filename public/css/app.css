@@ -262,7 +262,6 @@ ul.sub-menu {
 }
 .link:hover {
     transform: scale(1.1);
-    background-color: rgba(0, 0, 0, 0.9);
     transition: all 2s linear;
 }
 
