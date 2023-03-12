@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('main')
     <h2 class="title-allProduct">{{ $name }}</h2>
-
     <div class="select">
         <select name="" id="" class="filter">
             <option value="" selected>Thap den cao</option>
@@ -28,9 +27,7 @@
                 </div>
             </a>
         @endforeach
-
     </div>
-
     <div class="pagination">
         {{-- previous --}}
         @if ($cate->onFirstPage())

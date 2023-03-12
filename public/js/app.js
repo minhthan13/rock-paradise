@@ -1,5 +1,4 @@
 // header
-// header
 var model = document.querySelector(".container-search");
 var searchForm = document.querySelector(".search");
 
@@ -88,7 +87,6 @@ newStars.forEach((star, index) => {
 /* Scroll To Top */
 
 var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
 window.addEventListener("scroll", function () {
     if (window.pageYOffset > 100) {
         scrollToTopBtn.style.display = "block";
