@@ -1,4 +1,4 @@
-<form method="POST" action="/product/{key}">
+<form method="POST" action="/">
     @csrf
     <label>Color Filter</label><br />
     <input type="checkbox" name="color[]" value="red" />Red<br>

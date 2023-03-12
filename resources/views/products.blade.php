@@ -1,14 +1,15 @@
 @extends('layouts.app')
 @section('main')
     <h2 class="title-allProduct">ALL PRODUCT</h2>
-    <div class="select">
+    {{-- <div class="select">
         <select name="" id="" class="filter">
             <option value="" selected>Thap den cao</option>
             <option value="">Cao den thap</option>
             <option value="">Tu A-Z</option>
             <option value="">Tu Z-A</option>
         </select>
-    </div>
+    </div> --}}
+    <x-filters></x-filters>
     <div class="product-container">
         @foreach ($products as $pro)
             <a href="{{ url('products/' . $pro->name . '.html') }}" class="detail">
