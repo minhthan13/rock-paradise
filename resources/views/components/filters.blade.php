@@ -17,11 +17,13 @@
             <div class="select-filter">
                 <div class="price-input">
                     <div class="field">
-                        <input type="number" name="price_min" class="input-min" value="0">
+                        <input type="number" name="price_min" class="input-min"
+                            value="{{ request()->query('price_min') ? request()->query('price_min') : '0' }}">
                     </div>
                     <div class="separator">-</div>
                     <div class="field">
-                        <input type="number" name="price_max" class="input-max" value="40000">
+                        <input type="number" name="price_max" class="input-max"
+                            value="{{ request()->query('price_max') ? request()->query('price_max') : '40000' }}">
                     </div>
                 </div>
                 <div class="slider">
@@ -29,9 +31,11 @@
                 </div>
                 <div class="range-input">
                     <input type="range" class="range-min" min="0" max="40000"
-                        value="{{ request()->query('price_min') }}" step="1">
+                        value="{{ request()->query('price_min') ? request()->query('price_min') : '0' }}"
+                        step="1">
                     <input type="range" class="range-max" min="0" max="40000"
-                        value="{{ request()->query('price_max') }}" step="1">
+                        value="{{ request()->query('price_max') ? request()->query('price_max') : '40000' }}"
+                        step="1">
                 </div>
             </div>
         </div>
@@ -102,6 +106,7 @@
             </div>
         </div>
         <input type="submit">
+        <input type="reset">
     </div>
 
 </div>
