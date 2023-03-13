@@ -75,6 +75,7 @@ CREATE TABLE `vote_product` (
   `email` varchar(50),
   `product_id` int(11),
   `vote_rating` int(11) NOT NULL,
+  `comments` text,
   PRIMARY KEY(email,product_id)
 ) ENGINE=InnoDB;
 
@@ -306,3 +307,72 @@ VALUES
 (NULL, '83', b'1'), (NULL, '83', b'0'), (NULL, '83', b'0'), (NULL, '83', b'0'), (NULL, '83', b'0'),
 (NULL, '84', b'1'), (NULL, '84', b'0'), (NULL, '84', b'0'), (NULL, '84', b'0'), (NULL, '84', b'0'),
 (NULL, '85', b'1'), (NULL, '85', b'0'), (NULL, '85', b'0'), (NULL, '85', b'0');
+
+
+-- vote gen product
+
+
+USE `rockparadise`;
+DROP procedure IF EXISTS `vote_product_gen_data`;
+
+USE `rockparadise`;
+DROP procedure IF EXISTS `rockparadise`.`vote_product_gen_data`;
+;
+
+DELIMITER $$
+USE `rockparadise`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `vote_product_gen_data`()
+BEGIN
+  DECLARE v_max_count INT DEFAULT 10;
+  DECLARE v_min_count INT DEFAULT 1;
+  DECLARE v_count INT DEFAULT 1;
+  DECLARE v_min_vote INT DEFAULT 2;
+  DECLARE v_max_vote INT DEFAULT 5;
+  DECLARE v_vote INT DEFAULT 1;
+  DECLARE v_product_id INT DEFAULT 0;
+  DECLARE v_next_product_id INT DEFAULT 1;
+  DECLARE v_random_email INT DEFAULT 1;
+  DECLARE v_email VARCHAR(30);
+  DECLARE v_comment TEXT DEFAULT '';
+  TRUNCATE TABLE vote_product;
+  UPDATE product SET vote_quantity = 0, total_vote = 0 WHERE product_id > 0;
+ 
+  WHILE v_next_product_id > v_product_id 
+	DO
+  	  SET v_product_id = v_next_product_id;
+      
+      SELECT  product_id INTO v_next_product_id
+      FROM product 
+      WHERE product_id > v_product_id
+      ORDER BY product_id 
+      LIMIT 1;
+      
+	 SET v_count = FLOOR(RAND()*(v_max_count - v_min_count + 1)) + v_min_count;
+     WHILE v_count > 0
+     DO
+		SET v_count = v_count -1;
+		SET v_email = concat('email',convert(v_random_email, char),'@gmail.com');
+		SET v_random_email = v_random_email + 1;
+        SET v_vote = FLOOR(RAND()*(v_max_vote - v_min_vote + 1)) + v_min_vote;
+        SET v_comment = CASE 
+        WHEN v_vote <= 2 THEN 'Bad product' 
+        WHEN v_vote >= 4 THEN 'Good product'
+        ELSE 'Normal product'
+        END;
+        INSERT INTO vote_product (email,product_id,vote_rating, comments)
+        VALUES (v_email, v_product_id, v_vote, v_comment);
+        UPDATE product 
+        SET vote_quantity = vote_quantity + 1,
+        total_vote = total_vote + v_vote
+        WHERE product_id = v_product_id;
+     END WHILE;
+	
+  END WHILE;
+  
+  
+END$$
+
+DELIMITER ;
+;
+
+call rockparadise.vote_product_gen_data();
