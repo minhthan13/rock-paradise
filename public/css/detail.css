@@ -46,6 +46,20 @@
 }
 .product-rating {
     color: #ccc;
+    position: relative;
+}
+.present-rating {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+.present-rating i {
+    margin-right: 4px;
+}
+i.fas.fa-star {
+    width: 18px;
+    height: 18px;
 }
 .product-title {
     font-size: 1.75rem;

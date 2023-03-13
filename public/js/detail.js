@@ -22,21 +22,31 @@ function slideImage() {
 
 // window.addEventListener("resize", slideImage);
 // Lấy phần tử sao từ HTML
-let starsElement = document.querySelector(".product-rating");
 
 // Tính toán số lượng sao và nửa ngôi sao cần được hiển thị dựa trên số sao trung bình
-let averageRating = 4.5;
-let fullStars = Math.floor(averageRating);
-let hasHalfStar = averageRating - fullStars >= 0.5;
+// let starsElement = document.querySelector(".present-rating");
+// let averageRating = 5; // Thay đổi giá trị thành số lượng sao mong muốn
+// for (let i = 1; i <= averageRating; i++) {
+//     let starNode = document.createElement('i');
+//     starNode.className = 'fas fa-star selected';
+//     starsElement.appendChild(starNode);
+// }
 
-// Tạo HTML để hiển thị số sao và nửa ngôi sao
-let starsHTML = "";
+let starsElement = document.querySelector(".present-rating");
+let averageRating = 4.2;
+let fullStars = Math.floor(averageRating);
+let hasHalfStar = averageRating - fullStars != 0;
+
 for (let i = 0; i < fullStars; i++) {
-    starsHTML +=
-        '<span class="star selected"><i class="fa-solid fa-star"></i></span>';
+    let fullStarElement = document.createElement("i");
+    fullStarElement.classList.add("fas", "fa-star", "selected");
+    starsElement.appendChild(fullStarElement);
 }
+
 if (hasHalfStar) {
-    starsHTML +=
-        '<span class="star selected"><i class="fa-solid fa-star-half-alt"></i></span>';
+    let halfStarElement = document.createElement("i");
+    halfStarElement.classList.add("fas", "fa-star-half-alt", "selected");
+    starsElement.appendChild(halfStarElement);
 }
-starsElement.innerHTML = starsHTML;
+// const presentRating = document.querySelector(".present-rating");
+// console.log(presentRating);
