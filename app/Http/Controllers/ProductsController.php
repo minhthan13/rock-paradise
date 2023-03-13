@@ -56,4 +56,5 @@ class ProductsController extends Controller
         return view('menu.bestselling',['bsell'=>$productsPerPage]);
 
     }
+    
 }

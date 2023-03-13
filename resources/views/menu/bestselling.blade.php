@@ -1,14 +1,9 @@
 @extends('layouts.app')
 @section('main')
     <h2 class="title-allProduct">BEST SELLING PRODUCT</h2>
-    <div class="select">
-        <select name="" id="" class="filter">
-            <option value="" selected>Thap den cao</option>
-            <option value="">Cao den thap</option>
-            <option value="">Tu A-Z</option>
-            <option value="">Tu Z-A</option>
-        </select>
-    </div>
+    <form method="get" action="{{ route('filter', ['view' => 'bestselling']) }}">
+        <x-filters></x-filters>
+    </form>
     <div class="product-container">
         @foreach ($bsell as $pro)
             <a href="{{ url('products/' . $pro->name . '.html') }}" class="detail">

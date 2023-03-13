@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\FilterController;
+
 
 
 
@@ -16,7 +18,10 @@ Route::get('/products/{id}.html',[ProductsController::class,'product'] );
 Route::get('/product/{name}',[ProductsController::class,'cateProduct'] );
 //search
 Route::post('product/search', [SearchController::class, "search"]);
+// filter
 
+Route::get('/{view}/filter', 'App\Http\Controllers\FilterController@filter')
+->where('view', '(products|bestselling)')->name('filter');
 //menu homepage
 Route::get('/best-selling',[ProductsController::class,'bestSelling']);
 Route::get('/contact',function (){ return view('menu.contact');});

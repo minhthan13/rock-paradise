@@ -27,7 +27,7 @@ img {
 }
 .nav-item {
     list-style: none;
-    padding: 10px 25px;
+
     position: relative;
 }
 .nav-icon {
@@ -40,6 +40,7 @@ img {
 }
 .nav-item a {
     position: relative;
+    padding: 10px 25px;
     text-decoration: none;
     color: #000;
     font-size: 18px;
@@ -51,31 +52,31 @@ img {
     height: 2px;
     background-color: #000;
     position: absolute;
-    bottom: -10px;
+    bottom: 0;
     transition: 0.5s;
 }
 .nav-item:hover a::before {
-    width: 100%;
+    width: 65%;
     animation-name: fade;
     animation-duration: 2s;
 }
 ul.sub-menu {
     position: absolute;
-    padding: 0px;
     background: rgb(255, 255, 255);
     box-shadow: rgb(0 0 0 / 9%) 0px 10px 20px;
-    top: 40px;
+    top: 30px;
     left: -10px;
     width: 150px;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 10px;
     display: none;
-    z-index: 1;
+    z-index: 3;
 }
 .sub-menu-item {
     list-style: none;
-    padding: 15px 0px;
+    padding: 10px 0px;
 }
+
 .has-child {
     position: relative;
 }

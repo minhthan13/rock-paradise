@@ -1,14 +1,6 @@
 @extends('layouts.app')
 @section('main')
     <h2 class="title-allProduct">Search: {{ $title }}</h2>
-    <div class="select">
-        <select name="" id="" class="filter">
-            <option value="" selected>Thap den cao</option>
-            <option value="">Cao den thap</option>
-            <option value="">Tu A-Z</option>
-            <option value="">Tu Z-A</option>
-        </select>
-    </div>
     <div class="product-container">
         @foreach ($search as $pro)
             <a href="{{ url('products/' . $pro->name . '.html') }}" class="detail">

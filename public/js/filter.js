@@ -43,7 +43,7 @@ rangeInput.forEach((input) => {
 
 const showModel = document.querySelector(".show-boxFilter");
 const modelBox = document.querySelector(".container-filter");
-const boxFilter = document.querySelector("box-filter");
+const boxFilter = document.querySelector(".box-filter");
 const closeFilter = document.querySelector(".closeFilter");
 showModel.addEventListener("click", () => {
     modelBox.classList.remove("close");
