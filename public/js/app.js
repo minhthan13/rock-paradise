@@ -5,8 +5,8 @@ var searchForm = document.querySelector(".search");
 var iconSearch = document.querySelector(".fa-magnifying-glass");
 iconSearch.addEventListener("click", search);
 
-var iconClose = document.querySelector(".closeModel");
-iconClose.addEventListener("click", Close);
+var iconClose1 = document.querySelector(".closeModel");
+iconClose1.addEventListener("click", Close);
 function search() {
     model.classList.add("block");
     model.classList.remove("close");
@@ -23,8 +23,8 @@ searchForm.addEventListener("click", function (event) {
 var iconBag = document.querySelector(".fa-bag-shopping");
 var containerCart = document.querySelector(".container-cart");
 var cartBox = document.querySelector(".cart-box");
-var iconClose = document.querySelector(".xmark-cart");
-iconClose.addEventListener("click", Close1);
+var iconClose2 = document.querySelector(".xmark-cart");
+iconClose2.addEventListener("click", Close1);
 iconBag.addEventListener("click", search1);
 function search1() {
     containerCart.classList.add("block");

@@ -1,0 +1,27 @@
+.box-question {
+    max-width: 700px;
+    margin: 20px auto;
+}
+.question {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 15px 0px;
+}
+.main-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-question p,
+.main-question i {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.more-question {
+    padding: 10px 20px;
+    border-top: 1px solid #000;
+    display: none;
+}
+.more-question p {
+    margin: 10px 0px;
+}
