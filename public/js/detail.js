@@ -50,3 +50,22 @@ if (hasHalfStar) {
 }
 // const presentRating = document.querySelector(".present-rating");
 // console.log(presentRating);
+
+
+let showRating = document.querySelector(".btn-rating");
+let formRating = document.querySelector(".container-rating");
+let boxRating = document.querySelector(".box-rating");
+
+showRating.addEventListener("click",()=>{
+    formRating.classList.remove("close");
+    formRating.classList.add("block");
+});
+
+formRating.addEventListener("click",()=>{
+    formRating.classList.remove("block");
+    formRating.classList.add("close");
+});
+
+boxRating.addEventListener("click",(e)=>{
+    e.stopPropagation();
+})

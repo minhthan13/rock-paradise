@@ -55,7 +55,7 @@
                 <button type="button" class="btn">
                     Add to Cart <i class="fas fa-shopping-cart"></i>
                 </button>
-                <button type="button" class="btn">Buy Now</button>
+                <button type="button" class="btn btn-rating">Rating</button>
             </div>
 
             <div class="social-links">
@@ -76,6 +76,35 @@
                     <i class="fab fa-pinterest"></i>
                 </a>
             </div>
+        </div>
+    </div>
+    <div class="container-rating close">
+        <div class="box-rating">
+            <div class="header-rating">
+                <p>Rating</p>
+            </div>
+            <div class="body-rating">
+                <div class="email-userRating">
+                    <label for="">Email User</label>
+                    <input type="email" name="" id="" required>
+                </div>
+                <div class="star-userRating">
+                    <p>Vote</p>
+                    <div class="rate">
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                    </div>
+                </div>
+                <div class="comment-userRating">
+                    <p>Comment</p>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                <button class="btn-userRating">Submit</button>
+            </div>
+            
         </div>
     </div>
 @endsection
