@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('main')
     <h2 class="title-allProduct">ALL PRODUCT</h2>
-    <form method="get" action="{{ route('filter', ['view' => 'products']) }}">
+    <form method="get" action="{{ route('filter', ['view' => 'products']) }}" id='form-filter'>
         <x-filters></x-filters>
     </form>
+
     <div class="product-container">
         @foreach ($products as $pro)
             <a href="{{ url('products/' . $pro->name . '.html') }}" class="detail">

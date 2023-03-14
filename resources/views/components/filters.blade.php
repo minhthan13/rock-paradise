@@ -18,12 +18,12 @@
                 <div class="price-input">
                     <div class="field">
                         <input type="number" name="price_min" class="input-min"
-                            value="{{ request()->query('price_min') ? request()->query('price_min') : '0' }}">
+                            value="{{ request()->query('price_min') ? intval(request()->query('price_min')) : '0' }}">
                     </div>
                     <div class="separator">-</div>
                     <div class="field">
                         <input type="number" name="price_max" class="input-max"
-                            value="{{ request()->query('price_max') ? request()->query('price_max') : '40000' }}">
+                            value="{{ request()->query('price_min') ? intval(request()->query('price_max')) : '40000' }}">
                     </div>
                 </div>
                 <div class="slider">
@@ -38,6 +38,7 @@
                         step="1">
                 </div>
             </div>
+            <button id='find-price'>Find Price</button>
         </div>
         <div class="filter">
             <p>Brand</p>
@@ -105,8 +106,8 @@
                 </div>
             </div>
         </div>
-        <input type="submit">
-        <input type="reset">
+        <hr>
+        <button class="filter-reset">Reset</button>
     </div>
 
 </div>

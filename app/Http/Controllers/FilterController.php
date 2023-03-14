@@ -15,6 +15,7 @@ class FilterController extends Controller
                 ->where('image.default_image','=','1');
                 $priceMin = $request->input('price_min', 0);
                 $priceMax = $request->input('price_max', 40000);
+                if($priceMin==0){return redirect('/products');}
                 $query->whereBetween('price', [$priceMin, $priceMax]);
                 $brands = $request->input('brands', []);
                 if (!empty($brands)) {
@@ -36,6 +37,7 @@ class FilterController extends Controller
                 ->where('product.is_top','=','1');
                 $priceMin = $request->input('price_min', 0);
                 $priceMax = $request->input('price_max', 40000);
+                if($priceMin==0){return redirect('/best-selling');}
                 $query->whereBetween('price', [$priceMin, $priceMax]);
                 $brands = $request->input('brands', []);
                 if (!empty($brands)) {

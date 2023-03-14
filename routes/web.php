@@ -19,7 +19,6 @@ Route::get('/product/{name}',[ProductsController::class,'cateProduct'] );
 //search
 Route::post('product/search', [SearchController::class, "search"]);
 // filter
-
 Route::get('/{view}/filter', 'App\Http\Controllers\FilterController@filter')
 ->where('view', '(products|bestselling)')->name('filter');
 //menu homepage

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('main')
     <h2 class="title-allProduct">BEST SELLING PRODUCT</h2>
-    <form method="get" action="{{ route('filter', ['view' => 'bestselling']) }}">
+    <form method="get" action="{{ route('filter', ['view' => 'bestselling']) }}" id='form-filter'>
         <x-filters></x-filters>
     </form>
     <div class="product-container">
