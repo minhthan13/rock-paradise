@@ -26,3 +26,8 @@ Route::get('/best-selling',[ProductsController::class,'bestSelling']);
 Route::get('/contact',function (){ return view('menu.contact');});
 Route::get('/about',function (){ return view('menu.about');});
 Route::get('/FAQ',function (){ return view('menu.FAQ');});
+
+// site map
+Route::get('/sitemap',function(){
+    return view('sitemap');
+});

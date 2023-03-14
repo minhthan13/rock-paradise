@@ -31,10 +31,10 @@
                 </div>
                 <div class="range-input">
                     <input type="range" class="range-min" min="0" max="40000"
-                        value="{{ request()->query('price_min') ? request()->query('price_min') : '0' }}"
+                        value="{{ request()->query('price_min') ? intval(request()->query('price_min')) : '0' }}"
                         step="1">
                     <input type="range" class="range-max" min="0" max="40000"
-                        value="{{ request()->query('price_max') ? request()->query('price_max') : '40000' }}"
+                        value="{{ request()->query('price_max') ? intval(request()->query('price_max')) : '40000' }}"
                         step="1">
                 </div>
             </div>

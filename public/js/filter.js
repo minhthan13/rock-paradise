@@ -1,3 +1,27 @@
+//pop-up
+const showModel = document.querySelector(".show-boxFilter");
+const modelBox = document.querySelector(".container-filter");
+const boxFilter = document.querySelector(".box-filter");
+const closeFilter = document.querySelector(".closeFilter");
+showModel.addEventListener("click", () => {
+    modelBox.classList.remove("close");
+    modelBox.classList.add("block");
+});
+
+closeFilter.addEventListener("click", () => {
+    modelBox.classList.add("close");
+    modelBox.classList.remove("block");
+});
+
+modelBox.addEventListener("click", () => {
+    modelBox.classList.add("close");
+    modelBox.classList.remove("block");
+});
+boxFilter.addEventListener("click", function (event) {
+    event.stopPropagation();
+});
+
+// xử lý tương tác price-range
 const priceInput = document.querySelector(".price-input");
 const rangeMin = document.querySelector(".range-min");
 const rangeMax = document.querySelector(".range-max");
@@ -67,13 +91,10 @@ function updateSlider() {
     progressBar.style.right = ((rangeMax.max - max) / range) * 100 + "%";
     progressBar.style.width = progress * 100 + "%";
 }
-
-// set event listeners for input fields
 inputMin.addEventListener("input", updateRange);
 inputMax.addEventListener("input", updateRange);
 rangeMin.addEventListener("input", checkValueAndUpdate);
 rangeMax.addEventListener("input", checkValueAndUpdate);
-
 function checkValueAndUpdate() {
     const min = parseInt(rangeMin.value);
     const max = parseInt(rangeMax.value);
@@ -83,13 +104,11 @@ function checkValueAndUpdate() {
         this.value = min;
         return;
     }
-
     // kiểm tra giá trị range-max, nếu như value của nó > max
     if (this === rangeMax && this.value > max) {
         this.value = max;
         return;
     }
-
     // kiểm tra giá trị range-min, nếu như value của nó > max - 1
     if (this === rangeMin && this.value > max - 1) {
         this.value = max - 1;
@@ -101,7 +120,6 @@ function checkValueAndUpdate() {
         this.value = min + 1;
         return;
     }
-
     updateField();
     updateSlider();
 }
@@ -119,28 +137,7 @@ oldMin = rangeMin.value;
 oldMax = rangeMax.value;
 updateSlider();
 
-const showModel = document.querySelector(".show-boxFilter");
-const modelBox = document.querySelector(".container-filter");
-const boxFilter = document.querySelector(".box-filter");
-const closeFilter = document.querySelector(".closeFilter");
-showModel.addEventListener("click", () => {
-    modelBox.classList.remove("close");
-    modelBox.classList.add("block");
-});
-
-closeFilter.addEventListener("click", () => {
-    modelBox.classList.add("close");
-    modelBox.classList.remove("block");
-});
-
-modelBox.addEventListener("click", () => {
-    modelBox.classList.add("close");
-    modelBox.classList.remove("block");
-});
-boxFilter.addEventListener("click", function (event) {
-    event.stopPropagation();
-});
-
+// xử lý sự kiện của filter
 const findPrice = document.querySelector("#find-price");
 const checkboxes = document.querySelectorAll("input[type=checkbox]");
 const filterForm = document.querySelector("#form-filter");
