@@ -1,4 +1,5 @@
 <script src="{{ asset('js/filter.js') }}" defer></script>
+@csrf
 <div class="show-boxFilter">
     <p>Filter</p>
     <i class="fa-solid fa-filter"></i>
@@ -18,7 +19,7 @@
                 <div class="price-input">
                     <div class="field">
                         <input type="number" name="price_min" class="input-min"
-                            value="{{ request()->query('price_min') ? intval(request()->query('price_min')) : '0' }}">
+                            value="{{ request()->query('price_min') ? intval(request()->query('price_min')) : '1' }}">
                     </div>
                     <div class="separator">-</div>
                     <div class="field">
@@ -30,15 +31,45 @@
                     <div class="progress"></div>
                 </div>
                 <div class="range-input">
-                    <input type="range" class="range-min" min="0" max="40000"
-                        value="{{ request()->query('price_min') ? intval(request()->query('price_min')) : '0' }}"
+                    <input type="range" class="range-min" min="1" max="40000"
+                        value="{{ request()->query('price_min') ? intval(request()->query('price_min')) : '1' }}"
                         step="1">
-                    <input type="range" class="range-max" min="0" max="40000"
+                    <input type="range" class="range-max" min="1" max="40000"
                         value="{{ request()->query('price_max') ? intval(request()->query('price_max')) : '40000' }}"
                         step="1">
                 </div>
             </div>
             <button id='find-price'>Find Price</button>
+        </div>
+        <div class="filter">
+            <p>Rating</p>
+            <div class="select-filter">
+                <div class="option">
+                    <input type="checkbox" name="rate[]" value="1"
+                        {{ in_array('1', request()->input('rate', [])) ? 'checked' : '' }}>
+                    <label for="">1 star</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="rate[]" value="2"
+                        {{ in_array('2', request()->input('rate', [])) ? 'checked' : '' }}>
+                    <label for="">2 star</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="rate[]" value="3"
+                        {{ in_array('3', request()->input('rate', [])) ? 'checked' : '' }}>
+                    <label for="">3 star</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="rate[]" value="4"
+                        {{ in_array('4', request()->input('rate', [])) ? 'checked' : '' }}>
+                    <label for="">4 star</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="rate[]" value="5"
+                        {{ in_array('5', request()->input('rate', [])) ? 'checked' : '' }}>
+                    <label for="">5 star</label>
+                </div>
+            </div>
         </div>
         <div class="filter">
             <p>Brand</p>
@@ -103,6 +134,27 @@
                     <input type="checkbox" name="color[]" value="Red"
                         {{ in_array('Red', request()->input('color', [])) ? 'checked' : '' }}>
                     <label for="">Red</label>
+                </div>
+            </div>
+        </div>
+        <div class="filter">
+            <p>Size</p>
+            <div class="select-filter">
+                <div class="option">
+                    <input type="checkbox" name="size[]" value="small"
+                        {{ in_array('small', request()->input('size', [])) ? 'checked' : '' }}>
+                    <label for="">Small</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="size[]" value="middle"
+                        {{ in_array('middle', request()->input('size', [])) ? 'checked' : '' }}>
+                    <label for="">Middle</label>
+                </div>
+
+                <div class="option">
+                    <input type="checkbox" name="size[]" value="big"
+                        {{ in_array('big', request()->input('size', [])) ? 'checked' : '' }}>
+                    <label for="">Big</label>
                 </div>
             </div>
         </div>

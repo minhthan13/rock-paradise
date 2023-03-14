@@ -13,17 +13,24 @@ class FilterController extends Controller
                 $query = DB::table('product')
                 ->join('image','product.product_id','=','image.product_id')
                 ->where('image.default_image','=','1');
-                $priceMin = $request->input('price_min', 0);
+                $priceMin = $request->input('price_min', 1);
                 $priceMax = $request->input('price_max', 40000);
                 if($priceMin==0){return redirect('/products');}
                 $query->whereBetween('price', [$priceMin, $priceMax]);
-                $brands = $request->input('brands', []);
+                $rates = $request->input('rate', []);
+                if (!empty($rates)) {
+                    $query->where('rate','<=', $rates);
+                }
                 if (!empty($brands)) {
                     $query->whereIn('brand', $brands);
                 }
                 $colors = $request->input('color', []);
                 if (!empty($colors)) {
                     $query->whereIn('color', $colors);
+                }
+                $sizes = $request->input('size', []);
+                if (!empty($sizes)) {
+                    $query->whereIn('size', $sizes);
                 }
                 $query->orderBy("product.product_id",'ASC');
                 $productsPerPage = $query->paginate(12, ['*'], 'page', $request->get('page'));
