@@ -149,3 +149,52 @@ i.fas.fa-star {
     border-color: transparent;
     color: #fff;
 }
+.container-rating{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 9;
+}
+.box-rating{
+    width: 400px;
+    height: 500px;
+    margin: 100px auto 0;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: #fff;
+}
+.header-rating p{
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+}
+.body-rating{
+    margin: 20px 20px 0;
+}
+.email-userRating,
+.star-userRating{
+    display: flex;
+    align-items: center;
+    margin: 15px 0px;
+}
+.email-userRating input{
+    flex: 1;
+    margin-left: 20px;
+}
+.star-userRating .rate{
+    margin: 0;
+    margin-left: 70px;
+}
+.comment-userRating p{
+    margin: 15px 0;
+}
+.comment-userRating textarea{
+    width: 100%;
+}
+.btn-userRating{
+    padding: 5px 10px;
+    margin: 15px 0 15px 290px;
+}
