@@ -1,7 +1,6 @@
 <script src="{{ asset('js/filter.js') }}" defer></script>
 @csrf
 <div class="show-boxFilter">
-    <p>Filter</p>
     <i class="fa-solid fa-filter"></i>
 </div>
 <div class="container-filter close">

@@ -14,34 +14,23 @@ body {
 img {
     vertical-align: middle;
 }
-/* traffic */
-.logo-navbar {
-    position: relative;
-}
-.box-traffic {
-    position: absolute;
-    top: -1em;
-    right: -2em;
-}
-.box-traffic i {
-    position: relative;
-    font-size: 2em;
-    margin-bottom: 1em;
-    color: rgba(20, 20, 20, 0.635);
-}
-.box-traffic i > p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 0.5em;
-}
+
 /* header */
 .navbar {
+    position: relative;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 1em 0;
+}
+#traffic {
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
 }
 .nav-list {
     display: flex;
@@ -386,12 +375,13 @@ ul.sub-menu {
     border-radius: 10px;
     width: 200px;
     height: 30px;
-    margin-left: 40px;
     cursor: pointer;
+    margin-left: 0px;
 }
 .dow-app p {
-    margin: 5px 0px 0px 30px;
+    margin: 0px auto;
     color: #fffffe;
+    text-align: center;
 }
 .social-icon {
     width: 250px;
@@ -438,18 +428,7 @@ i.fa-bars {
 .item ul {
     padding-left: 0px;
 }
-.dow-app {
-    border: 2px solid #fffffe;
-    border-radius: 10px;
-    width: 200px;
-    height: 30px;
-    cursor: pointer;
-    margin-left: 0px;
-}
-.dow-app p {
-    margin: 5px 0px 0px 30px;
-    color: #fffffe;
-}
+
 .social-icon {
     margin-left: 0px;
 }
@@ -482,6 +461,9 @@ i.fa-bars {
 }
 
 @media screen and (max-width: 980px) {
+    #traffic {
+        display: none;
+    }
     .nav-list {
         flex-direction: column;
         width: 100%;
@@ -490,12 +472,17 @@ i.fa-bars {
         margin: 0px 0px;
         position: relative;
         z-index: 9;
+        top: 15px;
     }
     .nav-item {
         border-bottom: 1px solid #565252;
+        padding: 15px 0px;
     }
     .nav-item:last-child {
-        border-bottom: none;
+    }
+    .has-child :hover ~ .sub-menu,
+    .sub-menu:hover {
+        display: none;
     }
     .navbar {
         position: relative;
@@ -503,9 +490,9 @@ i.fa-bars {
     }
     .menu-navbar {
         position: absolute;
-        top: 70px;
+        top: 80px;
         right: 0px;
-        background: rgba(0, 0, 0, 0.1);
+        background: #fff;
         width: 100%;
         min-height: 250px;
         display: none;

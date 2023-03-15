@@ -1,13 +1,9 @@
 <div class="navbar">
+    <p id="traffic"></p>
     <div class="logo-navbar">
         <a href="/">
             <img src="{{ asset('images/logo.avif') }}" alt="logo" />
-            <div class="box-traffic">
 
-                <i class="fa-regular fa-comment">
-                    <p id="traffic"></p>
-                </i>
-            </div>
         </a>
     </div>
     <div class="menu-navbar">

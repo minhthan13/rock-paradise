@@ -1,5 +1,5 @@
 //đếm traffic
-let count = 0;
+let count = 1000;
 if (!localStorage.getItem("count")) {
     localStorage.setItem("count", 0);
 } else {
@@ -124,7 +124,6 @@ rateAVG.forEach((item) => {
 });
 starsElement.forEach((item, index) => {
     let rating = ratings[index];
-    console.log(rating);
     if (rating >= 0 && rating <= 5) {
         for (let i = 1; i <= rating; i++) {
             let fullStarElement = document.createElement("i");
@@ -134,8 +133,8 @@ starsElement.forEach((item, index) => {
         if (rating - Math.floor(rating) != 0) {
             let halfStarElement = document.createElement("i");
             halfStarElement.classList.add(
-                "fas",
-                "fa-star-half-alt",
+                "fa-solid",
+                "fa-star-half",
                 "selected"
             );
             item.appendChild(halfStarElement);

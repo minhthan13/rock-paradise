@@ -376,3 +376,32 @@ DELIMITER ;
 ;
 
 call rockparadise.vote_product_gen_data();
+DROP TRIGGER IF EXISTS `rockparadise`.`vote_product_BEFORE_INSERT`;
+
+DELIMITER $$
+USE `rockparadise`$$
+CREATE DEFINER=`root`@`localhost` TRIGGER `rockparadise`.`vote_product_BEFORE_INSERT` BEFORE INSERT ON `vote_product` FOR EACH ROW
+BEGIN
+
+	IF NEW.vote_rating < 1 
+    THEN
+		SET NEW.vote_rating = 1;
+    ELSEIF NEW.vote_rating > 5
+		THEN 
+        SET NEW.vote_rating = 5;  
+	END IF;
+END$$
+DELIMITER ;
+DROP TRIGGER IF EXISTS `rockparadise`.`vote_product_AFTER_INSERT`;
+
+DELIMITER $$
+USE `rockparadise`$$
+CREATE DEFINER=`root`@`localhost` TRIGGER `rockparadise`.`vote_product_AFTER_INSERT` AFTER INSERT ON `vote_product` FOR EACH ROW
+BEGIN
+	UPDATE `rockparadise`.`product`
+    SET vote_quantity = vote_quantity + 1,
+		total_vote = total_vote + NEW.vote_rating
+	WHERE product_id = NEW.product_id;
+    
+END$$
+DELIMITER ;
