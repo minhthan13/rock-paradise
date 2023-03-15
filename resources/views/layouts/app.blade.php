@@ -24,6 +24,7 @@
     <header>
         @include('layouts.header')
     </header>
+    <hr style="opacity:0.4">
     <div>
         @yield('main')
     </div>
