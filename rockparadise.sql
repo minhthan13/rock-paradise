@@ -72,11 +72,11 @@ CREATE TABLE `user_action_log` (
 ) ENGINE=InnoDB;
 
 CREATE TABLE `vote_product` (
+  `vote_id` int(11) PRIMARY KEY AUTO_INCREMENT,
   `email` varchar(50),
   `product_id` int(11),
   `vote_rating` int(11) NOT NULL,
-  `comments` text,
-  PRIMARY KEY(email,product_id)
+  `comments` text
 ) ENGINE=InnoDB;
 
 ALTER TABLE `vote_product`
@@ -376,8 +376,9 @@ DELIMITER ;
 ;
 
 call rockparadise.vote_product_gen_data();
-DROP TRIGGER IF EXISTS `rockparadise`.`vote_product_BEFORE_INSERT`;
 
+--  chay rieng
+DROP TRIGGER IF EXISTS `rockparadise`.`vote_product_BEFORE_INSERT`;
 DELIMITER $$
 USE `rockparadise`$$
 CREATE DEFINER=`root`@`localhost` TRIGGER `rockparadise`.`vote_product_BEFORE_INSERT` BEFORE INSERT ON `vote_product` FOR EACH ROW
