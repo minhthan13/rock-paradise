@@ -60,7 +60,7 @@ const newStars = [...stars];
 const five = 5;
 // Thêm các sự kiện vào từng ngôi sao
 newStars.forEach((star, index) => {
-    var num = Math.floor(index / five);
+    let num = Math.floor(index / five);
     star.addEventListener("click", () => {
         // Thay đổi màu của các ngôi sao đã chọn
         for (let i = five * num; i <= index; i++) {
@@ -101,3 +101,29 @@ scrollToTopBtn.addEventListener("click", function () {
         behavior: "smooth",
     });
 });
+
+
+let starsElement = document.querySelectorAll(".present-rating");
+// let newStarsElement =Array.from(starsElement);;
+// console.log(newStarsElement)
+    starsElement.forEach((item)=>{
+        console.log(item);
+
+        let averageRating = Math.floor(Math.random()*5);
+        let fullStars = Math.floor(averageRating);
+        let hasHalfStar = averageRating - fullStars != 0;
+
+for (let i = 0; i < fullStars; i++) {
+    let fullStarElement = document.createElement("i");
+    fullStarElement.classList.add("fas", "fa-star", "selected");
+    item.appendChild(fullStarElement);
+}
+
+if (hasHalfStar) {
+    let halfStarElement = document.createElement("i");
+    halfStarElement.classList.add("fas", "fa-star-half-alt", "selected");
+    item.appendChild(halfStarElement);
+}
+})
+
+

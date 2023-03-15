@@ -32,24 +32,7 @@ function slideImage() {
 //     starsElement.appendChild(starNode);
 // }
 
-let starsElement = document.querySelector(".present-rating");
-let averageRating = 4.2;
-let fullStars = Math.floor(averageRating);
-let hasHalfStar = averageRating - fullStars != 0;
 
-for (let i = 0; i < fullStars; i++) {
-    let fullStarElement = document.createElement("i");
-    fullStarElement.classList.add("fas", "fa-star", "selected");
-    starsElement.appendChild(fullStarElement);
-}
-
-if (hasHalfStar) {
-    let halfStarElement = document.createElement("i");
-    halfStarElement.classList.add("fas", "fa-star-half-alt", "selected");
-    starsElement.appendChild(halfStarElement);
-}
-// const presentRating = document.querySelector(".present-rating");
-// console.log(presentRating);
 
 
 let showRating = document.querySelector(".btn-rating");

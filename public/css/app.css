@@ -356,6 +356,10 @@ ul.sub-menu {
     margin: 15px 0px;
     color: #d8dce3;
 }
+.item > ul > li a{
+    text-decoration: none;
+    color: #000;
+}
 .dow-app {
     border: 2px solid #fffffe;
     border-radius: 10px;

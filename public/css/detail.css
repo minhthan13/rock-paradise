@@ -48,11 +48,16 @@
     color: #ccc;
     position: relative;
 }
+.background-rating{
+    text-align: left;
+    width: 50%;
+}
 .present-rating {
     display: flex;
     position: absolute;
-    left: 0;
     top: 4px;
+    width: 50%;
+    text-align: left;
 }
 .present-rating i {
     margin-right: 4px;

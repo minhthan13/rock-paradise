@@ -2,12 +2,12 @@
     <div class="item">
         <div class="title-footer">Rock Paradise</div>
         <ul>
-            <li>Gift Cards</li>
-            <li>Sitemap</li>
-            <li>Esty Blog</li>
-            <li>Esty United Kingdom</li>
-            <li>Esty Germany</li>
-            <li>Esty Canada</li>
+            <li><a href=""> Gift Cards</a></li>
+            <li><a href="/sitemap"> Sitemap</a></li>
+            <li><a href=""> Esty Blog</a></li>
+            <li><a href=""> Esty United Kingdom</a></li>
+            <li><a href=""> Esty Germany</a></li>
+            <li><a href=""> Esty Canada</a></li>
         </ul>
         <div class="dow-app">
             <p>Dowload the Esty App</p>

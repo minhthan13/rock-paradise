@@ -153,7 +153,16 @@ span.active {
     font-weight: 600;
     background-color: #d8e5f9;
 }
-
+.card > .product-rating > .background-rating{
+    width: 100%;
+}
+.card > .product-rating > .present-rating{
+    width: 100%;
+}
+.card > .product-rating {
+    width: 32%;
+    margin: 0 auto;
+}
 /* product responsive */
 @media screen and (max-width: 1320px) {
     .detail {
@@ -172,5 +181,9 @@ span.active {
 @media screen and (max-width: 860px) {
     .detail {
         flex-basis: 100%;
+    }
+    .card > .product-rating {
+        width: 16%;
+        margin: 0 auto;
     }
 }
