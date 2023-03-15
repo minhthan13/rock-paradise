@@ -28,6 +28,4 @@ Route::get('/about',function (){ return view('menu.about');});
 Route::get('/FAQ',function (){ return view('menu.FAQ');});
 
 // site map
-Route::get('/sitemap',function(){
-    return view('sitemap');
-});
+Route::get('/sitemap',function(){return view('sitemap');});

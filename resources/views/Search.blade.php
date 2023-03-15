@@ -9,12 +9,20 @@
                         alt="{{ $pro->name }}" width="400px" height="400px" />
                     <p class="name-product">{{ $pro->title }}</p>
                     <span class="price-product">{{ $pro->price }}$</span>
-                    <div class="rate">
-                        <span class="star"><i class="fa-solid fa-star"></i></span>
-                        <span class="star"><i class="fa-solid fa-star"></i></span>
-                        <span class="star"><i class="fa-solid fa-star"></i></span>
-                        <span class="star"><i class="fa-solid fa-star"></i></span>
-                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                    <div class="product-rating">
+                        <div class="background-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <div class="present-rating">
+                            </div>
+                        </div>
+
+                        <p class="total-rate">
+                            {{ $pro->rating }} star
+                        </p>
                     </div>
                 </div>
             </a>

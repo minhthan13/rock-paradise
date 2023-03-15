@@ -26,8 +26,6 @@
         </div>
         <!-- card right -->
         <div class="product-content">
-
-
             <h2 class="product-title">{{ $product[0]->title }}</h2>
             <div class="product-rating">
                 <div class="background-rating">
@@ -36,9 +34,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                </div>
-                <div class="present-rating">
-
+                    <div class="present-rating">
+                    </div>
+                    &nbsp;(<p class="total-rate">{{ $product[0]->rating }} star</p>)
                 </div>
             </div>
             <div class="product-price">
@@ -104,7 +102,7 @@
                 </div>
                 <button class="btn-userRating">Submit</button>
             </div>
-            
+
         </div>
     </div>
 @endsection

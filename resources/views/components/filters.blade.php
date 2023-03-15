@@ -9,7 +9,7 @@
     <div class="box-filter">
         <div class="header-filter">
             <p>Filter Product</p>
-            <div class="closeFilter">
+            <div class="closeFilter" style="display:none">
                 <i class="fa-solid fa-xmark xmark-cart"></i>
             </div>
         </div>
@@ -150,7 +150,6 @@
                         {{ in_array('middle', request()->input('size', [])) ? 'checked' : '' }}>
                     <label for="">Middle</label>
                 </div>
-
                 <div class="option">
                     <input type="checkbox" name="size[]" value="big"
                         {{ in_array('big', request()->input('size', [])) ? 'checked' : '' }}>

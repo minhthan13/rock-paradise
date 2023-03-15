@@ -102,21 +102,32 @@ scrollToTopBtn.addEventListener("click", function () {
     });
 });
 
+// show star product
 let starsElement = document.querySelectorAll(".present-rating");
 let rateAVG = document.querySelectorAll(".total-rate");
-for (let index = 0; index < rateAVG.length; index++) {
-    let rating = parseFloat(rateAVG[index].innerText);
-}
-starsElement.forEach((item) => {
-    for (let i = 1; i < rating; i++) {
-        let fullStarElement = document.createElement("i");
-        fullStarElement.classList.add("fas", "fa-star", "selected");
-        item.appendChild(fullStarElement);
-    }
+let ratings = [];
 
-    if (rating - rating == 0) {
-        let halfStarElement = document.createElement("i");
-        halfStarElement.classList.add("fas", "fa-star-half-alt", "selected");
-        item.appendChild(halfStarElement);
+rateAVG.forEach((item) => {
+    const rating = parseFloat(item.innerText);
+    ratings.push(rating);
+});
+starsElement.forEach((item, index) => {
+    let rating = ratings[index];
+    console.log(rating);
+    if (rating >= 0 && rating <= 5) {
+        for (let i = 1; i <= rating; i++) {
+            let fullStarElement = document.createElement("i");
+            fullStarElement.classList.add("fas", "fa-star", "selected");
+            item.appendChild(fullStarElement);
+        }
+        if (rating - Math.floor(rating) != 0) {
+            let halfStarElement = document.createElement("i");
+            halfStarElement.classList.add(
+                "fas",
+                "fa-star-half-alt",
+                "selected"
+            );
+            item.appendChild(halfStarElement);
+        }
     }
 });

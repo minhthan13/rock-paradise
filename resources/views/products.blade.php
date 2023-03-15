@@ -20,10 +20,13 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <div class="present-rating">
+                            </div>
                         </div>
-                        <div class="present-rating">
 
-                        </div>
+                        <p class="total-rate">
+                            {{ $pro->rating }} star
+                        </p>
                     </div>
                 </div>
             </a>
