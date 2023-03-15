@@ -14,7 +14,28 @@ body {
 img {
     vertical-align: middle;
 }
-
+/* traffic */
+.logo-navbar {
+    position: relative;
+}
+.box-traffic {
+    position: absolute;
+    top: -1em;
+    right: -2em;
+}
+.box-traffic i {
+    position: relative;
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: rgba(20, 20, 20, 0.635);
+}
+.box-traffic i > p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.5em;
+}
 /* header */
 .navbar {
     display: flex;
@@ -356,7 +377,7 @@ ul.sub-menu {
     margin: 15px 0px;
     color: #d8dce3;
 }
-.item > ul > li a{
+.item > ul > li a {
     text-decoration: none;
     color: #000;
 }

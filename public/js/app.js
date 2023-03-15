@@ -1,3 +1,14 @@
+//đếm traffic
+let count = 0;
+if (!localStorage.getItem("count")) {
+    localStorage.setItem("count", 0);
+} else {
+    count = parseInt(localStorage.getItem("count"));
+}
+document.getElementById("traffic").innerHTML = count;
+count++;
+localStorage.setItem("count", count);
+
 // header
 var model = document.querySelector(".container-search");
 var searchForm = document.querySelector(".search");
