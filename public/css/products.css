@@ -25,7 +25,6 @@
     flex-wrap: wrap;
 }
 .detail {
-    max-height: 650px;
     flex-basis: calc(25% - 20px);
     text-decoration: none;
     color: #000;
@@ -45,10 +44,12 @@
     flex-grow: 1;
     width: 100%;
     max-height: 650px;
-    margin-bottom: 10px;
+    margin-bottom: 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    gap: 10px;
+    align-items: center;
 }
 .detail:hover {
     transform: translateY(-4px);
@@ -62,18 +63,37 @@
 }
 
 .name-product {
-    margin-top: 20px;
+    flex-grow: 1;
     text-align: center;
     font-weight: bold;
     align-self: center;
 }
 
 .price-product {
-    margin-top: 1em;
     font-weight: bold;
     align-self: center;
 }
+.product-rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.product-rating i {
+    align-self: center;
+}
 
+.background-rating,
+.present-rating {
+    display: flex;
+    position: relative;
+}
+.present-rating {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    float: left;
+    top: 0;
+}
 .rate {
     margin: 10px 0 20px 0;
     display: flex;
@@ -153,16 +173,7 @@ span.active {
     font-weight: 600;
     background-color: #d8e5f9;
 }
-.card > .product-rating > .background-rating{
-    width: 100%;
-}
-.card > .product-rating > .present-rating{
-    width: 100%;
-}
-.card > .product-rating {
-    width: 32%;
-    margin: 0 auto;
-}
+
 /* product responsive */
 @media screen and (max-width: 1320px) {
     .detail {

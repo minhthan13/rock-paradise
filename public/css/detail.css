@@ -48,24 +48,7 @@
     color: #ccc;
     position: relative;
 }
-.background-rating{
-    text-align: left;
-    width: 50%;
-}
-.present-rating {
-    display: flex;
-    position: absolute;
-    top: 4px;
-    width: 50%;
-    text-align: left;
-}
-.present-rating i {
-    margin-right: 4px;
-}
-i.fas.fa-star {
-    width: 18px;
-    height: 18px;
-}
+
 .product-title {
     font-size: 1.75rem;
     text-transform: capitalize;
@@ -154,7 +137,7 @@ i.fas.fa-star {
     border-color: transparent;
     color: #fff;
 }
-.container-rating{
+.container-rating {
     position: fixed;
     top: 0;
     left: 0;
@@ -163,7 +146,7 @@ i.fas.fa-star {
     background: rgba(0, 0, 0, 0.4);
     z-index: 9;
 }
-.box-rating{
+.box-rating {
     width: 400px;
     height: 500px;
     margin: 100px auto 0;
@@ -171,35 +154,35 @@ i.fas.fa-star {
     border-radius: 10px;
     background: #fff;
 }
-.header-rating p{
+.header-rating p {
     font-size: 30px;
     text-align: center;
     margin: 10px 0;
 }
-.body-rating{
+.body-rating {
     margin: 20px 20px 0;
 }
 .email-userRating,
-.star-userRating{
+.star-userRating {
     display: flex;
     align-items: center;
     margin: 15px 0px;
 }
-.email-userRating input{
+.email-userRating input {
     flex: 1;
     margin-left: 20px;
 }
-.star-userRating .rate{
+.star-userRating .rate {
     margin: 0;
     margin-left: 70px;
 }
-.comment-userRating p{
+.comment-userRating p {
     margin: 15px 0;
 }
-.comment-userRating textarea{
+.comment-userRating textarea {
     width: 100%;
 }
-.btn-userRating{
+.btn-userRating {
     padding: 5px 10px;
     margin: 15px 0 15px 290px;
 }

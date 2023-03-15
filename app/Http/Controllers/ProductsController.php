@@ -48,11 +48,15 @@ class ProductsController extends Controller
 
     public function bestSelling(){
         $query = DB::table('product')
+        ->selectRaw('total_vote/vote_quantity as rating')
+        ->select('product.product_id','product.name','product.is_top','product.price','product.title','image.image_id','image.default_image',DB::raw('total_vote / vote_quantity as rating'))
         ->join('image','product.product_id','=','image.product_id')
         ->where('image.default_image','=','1')
         ->where('product.is_top','=','1')
+        
         ->orderBy("product.product_id",'DESC');
         $productsPerPage = $query->paginate(12);
+        // dd($productsPerPage);
         return view('menu.bestselling',['bsell'=>$productsPerPage]);
 
     }

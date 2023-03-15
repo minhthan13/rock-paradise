@@ -102,28 +102,21 @@ scrollToTopBtn.addEventListener("click", function () {
     });
 });
 
-
 let starsElement = document.querySelectorAll(".present-rating");
-// let newStarsElement =Array.from(starsElement);;
-// console.log(newStarsElement)
-    starsElement.forEach((item)=>{
-        console.log(item);
-
-        let averageRating = Math.floor(Math.random()*5);
-        let fullStars = Math.floor(averageRating);
-        let hasHalfStar = averageRating - fullStars != 0;
-
-for (let i = 0; i < fullStars; i++) {
-    let fullStarElement = document.createElement("i");
-    fullStarElement.classList.add("fas", "fa-star", "selected");
-    item.appendChild(fullStarElement);
+let rateAVG = document.querySelectorAll(".total-rate");
+for (let index = 0; index < rateAVG.length; index++) {
+    let rating = parseFloat(rateAVG[index].innerText);
 }
+starsElement.forEach((item) => {
+    for (let i = 1; i < rating; i++) {
+        let fullStarElement = document.createElement("i");
+        fullStarElement.classList.add("fas", "fa-star", "selected");
+        item.appendChild(fullStarElement);
+    }
 
-if (hasHalfStar) {
-    let halfStarElement = document.createElement("i");
-    halfStarElement.classList.add("fas", "fa-star-half-alt", "selected");
-    item.appendChild(halfStarElement);
-}
-})
-
-
+    if (rating - rating == 0) {
+        let halfStarElement = document.createElement("i");
+        halfStarElement.classList.add("fas", "fa-star-half-alt", "selected");
+        item.appendChild(halfStarElement);
+    }
+});
