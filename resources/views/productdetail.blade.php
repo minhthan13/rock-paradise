@@ -105,6 +105,9 @@
                     <div class="comment-userRating">
                         <p>Comment:</p>
                         <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                        <script>
+                            CKEDITOR.replace('comment');
+                        </script>
                     </div>
                     <button class="btn-userRating" type="submit">Rated</button>
                 </div>

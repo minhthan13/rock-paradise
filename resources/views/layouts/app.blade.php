@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible">
     <title>Rock Paraside</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/products.css') }}">
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
@@ -19,6 +20,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/faq.js') }}" defer></script>
     <script src="{{ asset('js/giftcard.js') }}" defer></script>
+    <script src="//cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
 </head>
 
 <body>

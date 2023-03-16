@@ -148,7 +148,7 @@
 }
 .box-rating {
     width: 400px;
-    height: 500px;
+    height: 630px;
     margin: 100px auto 0;
     border: 1px solid #000;
     border-radius: 10px;
@@ -183,19 +183,20 @@
     width: 100%;
 }
 .btn-userRating {
-    padding: 5px 10px;
-    margin: 15px 0 15px 290px;
-    background: #17a3b8c5;
+    padding: 5px 20px;
+    margin: 15px 0 15px 280px;
+    background: #0fb4cec5;
+    color: rgba(255, 255, 255, 0.87);
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
-@media screen and (max-width:980px) {
-    .card-wrapper{
+@media screen and (max-width: 980px) {
+    .card-wrapper {
         flex-direction: column;
     }
-    .product-imgs{
+    .product-imgs {
         margin: 10px auto;
     }
 }
