@@ -185,4 +185,17 @@
 .btn-userRating {
     padding: 5px 10px;
     margin: 15px 0 15px 290px;
+    background: #17a3b8c5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:980px) {
+    .card-wrapper{
+        flex-direction: column;
+    }
+    .product-imgs{
+        margin: 10px auto;
+    }
 }

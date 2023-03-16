@@ -1,0 +1,103 @@
+.giftcard{
+    display: flex;
+    margin: 20px 20px;
+    justify-content: center;
+}
+.giftcard-img{
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.giftcard-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.giftcard-info{
+    width: 50%;
+    padding-left: 50px;
+}
+.giftcard-title{
+    margin: 10px 0;
+}
+.giftcard-title p{
+    font-size: 30px;
+}
+.giftcard-price-option{
+    margin: 10px 0;
+}
+.giftcard-price-option p,
+.giftcard-delivery p,
+.giftcard-send p{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.discount-buttons{
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.discount-buttons button{
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 10px 10px 10px 0px;
+    cursor: pointer;
+    border: none;
+}
+.btn-active{
+    border: 2px solid #000 !important;
+}
+.discount-buttons button:first-child{
+    margin-left: 0px;
+}
+.delivery-option{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.delivery-option input{
+    width: 20px;
+    height: 20px;
+}
+.delivery-option label{
+    margin-left: 15px;
+}
+.giftcard-send{
+    margin-top: 20px;
+}
+.giftcard-send input{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 20px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+}
+.giftcard-send textarea{
+    width: 100%;
+    border-radius: 20px;
+    padding: 15px 0 0 15px;
+}
+.giftcard-send button{
+    width: 100%;
+    height: 40px;
+    background: #000;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:660px) {
+    .giftcard{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .giftcard-img{
+        margin: 0 auto;
+    }
+    .giftcard-info{
+        width: 100%;
+    }
+}

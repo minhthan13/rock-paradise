@@ -2,7 +2,7 @@
     <div class="item">
         <div class="title-footer">Rock Paradise</div>
         <ul>
-            <li><a href=""> Gift Cards</a></li>
+            <li><a href="/giftcard"> Gift Cards</a></li>
             <li><a href="/sitemap"> Sitemap</a></li>
             <li><a href=""> Esty Blog</a></li>
             <li><a href=""> Esty United Kingdom</a></li>

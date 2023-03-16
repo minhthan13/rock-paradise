@@ -150,6 +150,7 @@ ul.sub-menu {
     background: #fff;
     margin-top: 50px;
     flex: 1 1 auto;
+    animation: bounceInDown 1s ease-in-out;
 }
 .search form {
     width: 80%;
@@ -472,7 +473,7 @@ i.fa-bars {
         margin: 0px 0px;
         position: relative;
         z-index: 9;
-        top: 15px;
+        background: #fff;
     }
     .nav-item {
         border-bottom: 1px solid #565252;
@@ -512,8 +513,11 @@ i.fa-bars {
     .sub-menu:hover {
         display: none;
     }
+    .hotspots-content{
+        width: 100%;
+    }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 660px) {
     .prev,
     .next,
     .text {
@@ -540,7 +544,7 @@ i.fa-bars {
         align-items: center;
     }
     .hotspots-img {
-        width: 80%;
+        width: 100%;
     }
 }
 /* animation  */
@@ -553,3 +557,20 @@ i.fa-bars {
         opacity: 1;
     }
 }
+
+@keyframes bounceInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-2000px);
+    }
+    60% {
+       opacity: 1;
+       transform: translateY(30px);
+    }
+    80% {
+       transform: translateY(-10px);
+    }
+    100% {
+       transform: translateY(0);
+    }
+ }

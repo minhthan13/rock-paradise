@@ -29,3 +29,5 @@ Route::get('/FAQ',function (){ return view('menu.FAQ');});
 
 // site map
 Route::get('/sitemap',function(){return view('sitemap');});
+// gift card
+Route::get('/giftcard',function(){return view('giftcard');});

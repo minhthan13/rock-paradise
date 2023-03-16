@@ -16,6 +16,7 @@
     color: #17a3b88a;
     border-radius: 5px;
     cursor: pointer;
+    
 }
 .header-filter {
     display: flex;
@@ -38,6 +39,7 @@
     height: 100%;
     background: #fff;
     overflow-y: scroll;
+    animation: fadeInLeft 0.5s ease-in-out;
 }
 .filter-reset {
     margin-top: 10px;
@@ -159,3 +161,16 @@ input[type="range"]::-moz-range-thumb {
     border-radius: 50%;
     box-shadow: 0 3px 8px rgba(23, 162, 184, 0.3);
 }
+/* Animation */
+
+
+@keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       transform: translateX(-300px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ }
