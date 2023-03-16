@@ -50,9 +50,7 @@ class FilterController extends Controller
         if (!empty($sizes)) {
             $query->whereIn('size', $sizes);
         }
-        
-        $query->orderByDesc(DB::raw('total_vote / vote_quantity'));
-
+        $query->orderByDesc('price');
         switch($view){
             case 'products':
                 $perPage = $query->paginate(12, ['*'], 'page', $request->get('page'));
