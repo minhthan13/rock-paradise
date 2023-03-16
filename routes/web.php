@@ -31,3 +31,5 @@ Route::get('/FAQ',function (){ return view('menu.FAQ');});
 Route::get('/sitemap',function(){return view('sitemap');});
 // gift card
 Route::get('/giftcard',function(){return view('giftcard');});
+//rate star
+Route::post('/rated',[ProductsController::class,'rating'])->name('product.rating');

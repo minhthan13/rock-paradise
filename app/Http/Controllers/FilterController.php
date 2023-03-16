@@ -60,7 +60,6 @@ class FilterController extends Controller
                 $query->where('product.is_top','=','1');
                 $perPage = $query->paginate(12, ['*'], 'page', $request->get('page'));
                 return view('menu.bestselling', ['bsell' => $perPage->appends(request()->query())]);
-
             default:
                 return view('error');
         }

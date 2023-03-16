@@ -25,7 +25,7 @@
                         </div>
 
                         <p class="total-rate">
-                            {{ $pro->rating }} star
+                            {{ $pro->rating }} Star&nbsp;-&nbsp;<k>{{ $pro->vote_quantity }} Vote</k>
                         </p>
                     </div>
                 </div>

@@ -2,7 +2,6 @@
 @section('main')
     <h2 class="title-allProduct">BEST SELLING PRODUCT</h2>
     <form method="get" action="{{ route('filter', ['view' => 'bestselling']) }}" id='form-filter'>
-        @csrf
         <x-filters></x-filters>
     </form>
     <div class="product-container">
@@ -25,7 +24,7 @@
                         </div>
 
                         <p class="total-rate">
-                            {{ $pro->rating }} star
+                            {{ $pro->rating }} Star&nbsp;-&nbsp;<k>{{ $pro->vote_quantity }} Vote</k>
                         </p>
                     </div>
                 </div>

@@ -64,37 +64,7 @@ showSubMenu.addEventListener("click", () => {
 });
 
 // body
-//  Star Rating
-const stars = document.querySelectorAll(".star");
 
-const newStars = [...stars];
-const five = 5;
-// Thêm các sự kiện vào từng ngôi sao
-newStars.forEach((star, index) => {
-    let num = Math.floor(index / five);
-    star.addEventListener("click", () => {
-        // Thay đổi màu của các ngôi sao đã chọn
-        for (let i = five * num; i <= index; i++) {
-            stars[i].classList.add("selected");
-        }
-        // Xóa màu của các ngôi sao chưa chọn
-        for (let i = five * (num + 1) - 1; i > index; i--) {
-            stars[i].classList.remove("selected");
-        }
-    });
-    star.addEventListener("mouseover", () => {
-        // Thêm màu cho các ngôi sao khi rê chuột qua
-        for (let i = five * num; i <= index; i++) {
-            stars[i].classList.add("hover");
-        }
-    });
-    star.addEventListener("mouseout", () => {
-        // Xóa màu của các ngôi sao khi rời chuột
-        for (let i = num; i <= index; i++) {
-            stars[i].classList.remove("hover");
-        }
-    });
-});
 /* Scroll To Top */
 
 var scrollToTopBtn = document.getElementById("scrollToTopBtn");

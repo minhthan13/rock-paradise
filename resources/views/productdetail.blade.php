@@ -36,7 +36,8 @@
                     <i class="fas fa-star"></i>
                     <div class="present-rating">
                     </div>
-                    &nbsp;(<p class="total-rate">{{ $product[0]->rating }} star</p>)
+                    &nbsp;(<p class="total-rate">
+                        {{ $product[0]->rating }} Star</p>&nbsp;-&nbsp;<p>{{ $product[0]->vote_quantity }} Vote</p>)
                 </div>
             </div>
             <div class="product-price">
@@ -77,32 +78,48 @@
         </div>
     </div>
     <div class="container-rating close">
-        <div class="box-rating">
-            <div class="header-rating">
-                <p>Rating</p>
-            </div>
-            <div class="body-rating">
-                <div class="email-userRating">
-                    <label for="">Email User</label>
-                    <input type="email" name="" id="" required>
-                </div>
-                <div class="star-userRating">
-                    <p>Vote</p>
-                    <div class="rate">
-                        <span class="star"><i class="fa-solid fa-star"></i></span>
-                        <span class="star"><i class="fa-solid fa-star"></i></span>
-                        <span class="star"><i class="fa-solid fa-star"></i></span>
-                        <span class="star"><i class="fa-solid fa-star"></i></span>
-                        <span class="star"><i class="fa-solid fa-star"></i></span>
-                    </div>
-                </div>
-                <div class="comment-userRating">
-                    <p>Comment</p>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                </div>
-                <button class="btn-userRating">Submit</button>
-            </div>
 
-        </div>
+        <form action="{{ route('product.rating') }}" id="form-rating" method="post">
+            @csrf
+            <div class="box-rating">
+                <div class="header-rating">
+                    <p>Rating</p>
+                </div>
+                <div class="body-rating">
+                    <div class="email-userRating">
+                        <label for="email-rate">Email User: <span style="color:red">*</span></label>
+                        <input type="email" name="email" id="email-rate" required>
+                    </div>
+                    <div class="star-userRating">
+                        <p>Vote: <span style="color:red">*</span></p>
+                        <div class="rate">
+                            <span class="star"><i class="fa-solid fa-star star-active" data-value="1"></i></span>
+                            <span class="star"><i class="fa-solid fa-star" data-value="2"></i></span>
+                            <span class="star"><i class="fa-solid fa-star" data-value="3"></i></span>
+                            <span class="star"><i class="fa-solid fa-star" data-value="4"></i></span>
+                            <span class="star"><i class="fa-solid fa-star" data-value="5"></i></span>
+                        </div>
+                        <input type="hidden" name="star" id="star-input" value="">
+                        <input type="hidden" name="proID" value="{{ $product[0]->product_id }}">
+                    </div>
+                    <div class="comment-userRating">
+                        <p>Comment:</p>
+                        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                    </div>
+                    <button class="btn-userRating" type="submit">Rated</button>
+                </div>
+            </div>
+        </form>
     </div>
+    @if (session('success'))
+        <script>
+            alert('{{ session('success') }}');
+        </script>
+    @endif
+
+    @if (session('error'))
+        <script>
+            alert('{{ session('error') }}');
+        </script>
+    @endif
 @endsection
