@@ -37,4 +37,5 @@ Route::get('/giftcard',function(){return view('giftcard');});
 // admin
 // + login
 Route::get('/login',function(){return view('admin.login');});
-Route::post('/dashboard',[AdminController::class,'index'])->name('admin.index');
+Route::post('/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+Route::get('/dashboard',[AdminController::class,'dashboard'])->name('admin.product');

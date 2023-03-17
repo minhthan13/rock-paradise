@@ -2,7 +2,7 @@
 <div class="container">
     <div class="logo">ROCK PARADISE</div>
     <div class="login-item">
-        <form action="{{ route('admin.index') }}" method="post" class="form form-login">
+        <form action="{{ route('admin.dashboard') }}" method="post" class="form form-login">
             @csrf
             <div class="form-field">
                 <label class="user" for="login-username"><span class="hidden">Username</span></label>
@@ -29,4 +29,5 @@
     @if (Session::has('error'))
         <div class="alert">{{ Session::get('error') }}</div>
     @endif
+
 </div>

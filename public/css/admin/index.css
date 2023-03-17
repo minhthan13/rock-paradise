@@ -1,0 +1,195 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css");
+/* html {
+    box-sizing: border-box;
+} */
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background: #f1f2f7;
+    font-family: "Open Sans", arial, sans-serif;
+    color: darkslategray;
+}
+
+/* header */
+header[role="banner"] {
+    background: white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+header[role="banner"] h1 {
+    margin: 0;
+    font-weight: 300;
+    padding: 1rem;
+}
+header[role="banner"] h1:before {
+    content: "\f248";
+    font-family: FontAwesome;
+    padding-right: 0.6em;
+    color: #438aad;
+}
+header[role="banner"] .utilities {
+    width: 100%;
+    background: slategray;
+    color: #ddd;
+}
+header[role="banner"] .utilities li {
+    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+}
+header[role="banner"] .utilities li a {
+    padding: 0.7em;
+    display: block;
+}
+
+/* header */
+.utilities a:before {
+    content: "\f248";
+    font-family: FontAwesome;
+    padding-right: 0.6em;
+}
+
+.logout a:before {
+    content: "";
+}
+
+.users a:before {
+    content: "";
+}
+/* navbar */
+nav[role="navigation"] {
+    background: #2a3542;
+    color: #ddd;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0px;
+    left: -280px;
+    transition: left 0.3s ease-in-out;
+    padding-top: 75px;
+}
+nav[role="navigation"]:nth-child(1) {
+    margin-top: 75px;
+}
+nav[role="navigation"].open {
+    left: 0;
+}
+.open-nav {
+    font-size: 24px;
+    cursor: pointer;
+    background: #cfe2ff;
+    color: rgb(100, 96, 91);
+    padding: 0.5em;
+    border-radius: 8px;
+    position: absolute;
+    top: 75px;
+    left: 280px;
+}
+
+.open-nav:hover {
+    color: rgb(41, 113, 221); /* thay đổi màu hover */
+}
+nav[role="navigation"] li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+nav[role="navigation"] li a {
+    color: #ddd;
+    text-decoration: none;
+    display: block;
+    padding: 0.7em;
+}
+nav[role="navigation"] li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+nav[role="navigation"] li a:before {
+    content: "\f248";
+    font-family: FontAwesome;
+    padding-right: 0.6em;
+}
+nav[role="navigation"] .dashboard a:before {
+    content: "";
+}
+nav[role="navigation"] .write a:before {
+    content: "";
+}
+nav[role="navigation"] .edit a:before {
+    content: "";
+}
+nav[role="navigation"] .comments a:before {
+    content: "";
+}
+nav[role="navigation"] .users a:before {
+    content: "";
+}
+nav[role="navigation"].hidden {
+    display: none;
+}
+.section {
+    margin-top: 8em !important;
+}
+/* current nav item */
+.current,
+.dashboard .dashboard a,
+.write .write a,
+.edit .edit a,
+.comments .comments a,
+.users .users a {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* typography */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h2,
+h3,
+h4 {
+    font-weight: 300;
+    margin: 0;
+}
+
+/* lists */
+ul,
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 600px) {
+    html,
+    body {
+        height: 100%;
+    }
+
+    header[role="banner"] {
+        height: 75px;
+    }
+    header[role="banner"] .utilities {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: transparent;
+        color: darkslategray;
+        width: auto;
+    }
+    header[role="banner"] .utilities li {
+        display: inline-block;
+    }
+    header[role="banner"] .utilities li a {
+        padding: 0.5em 1em;
+    }
+    /* nav[role="navigation"].hidden {
+        display: none;
+    } */
+}
+.list-nav {
+    height: 100vh;
+}
