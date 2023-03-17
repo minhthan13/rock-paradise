@@ -26,7 +26,7 @@
         </ul>
     </div>
     <div class="nav-icon">
-        <a href="/login"><i class="fa-regular fa-user"></i></a>
+        <a href="{{ route('admin.login') }}"><i class="fa-regular fa-user"></i></a>
         <i class="fa-solid fa-magnifying-glass"></i>
         <i class="fa-solid fa-bag-shopping"></i>
         <i class="fa-solid fa-bars"></i>

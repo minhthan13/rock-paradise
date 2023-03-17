@@ -35,7 +35,13 @@ Route::get('/sitemap',function(){return view('sitemap');});
 Route::get('/giftcard',function(){return view('giftcard');});
 
 // admin
-// + login
-Route::get('/login',function(){return view('admin.login');});
-Route::post('/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
-Route::get('/dashboard',[AdminController::class,'dashboard'])->name('admin.product');
+Route::get('/admin', 'ProductController@index')->name('admin.home');
+Route::get('/login',function(){return view('admin.login');})->name('admin.login');
+Route::post('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+Route::get('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.product');
+Route::get('admin/category',[AdminController::class,'cateadmin'])->name('admin.cate');
+Route::get('admin/img',[AdminController::class,'imgadmin'])->name('admin.img');
+Route::get('admin/user',[AdminController::class,'listUser'])->name('admin.listUser');
+
+// deleted
+Route::get('/admin/delete/{id}', [AdminController::class,'delete'])->name('product.delete');

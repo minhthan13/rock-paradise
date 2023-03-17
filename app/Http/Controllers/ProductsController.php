@@ -8,6 +8,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class BaseController extends Controller
 {
+    
+    
     protected function getProductQuery() {
         return DB::table('product')
             ->select('product.product_id', 'product.name', 'product.is_top', 'product.price', 'product.title', 'image.image_id', 'image.default_image','product.description',
