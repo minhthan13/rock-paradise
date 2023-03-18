@@ -26,7 +26,7 @@ class BaseAdminController extends Controller
                 DB::raw('ROUND(total_vote / vote_quantity, 1) as rating'))
                 ->join('category','product.category_id','=','category.category_id')
                 ->join('image', 'product.product_id', '=', 'image.product_id')
-                ->where('image.default_image', '=', '1');
+                ->where('image.default_image', '=', '1')->orderByDesc('product_id');
     }
 }
 class AdminController extends BaseAdminController
@@ -42,19 +42,18 @@ class AdminController extends BaseAdminController
                     ->where('password','=',$validated['password'])
                     ->first();
         if(!empty($checkUser)){
-            session()->put('success_message', 'đăng nhập thành công');
+            session()->flash('success_message', 'Logged in successfully');
             session()->put('user', $checkUser);
-            $displayMessage = true;
             $query = $this->getProductQuery()->paginate(25);
-            return view('admin.dashboard',['products'=>$query,'displayMessage' => $displayMessage]);
+            return view('admin.dashboard',['products'=>$query]);
         } else {
-            return redirect()->back()->with('error', 'Thông tin tài khoản hoặc mật khẩu không chính xác.');
+            return redirect()->back()->with('error', 'Incorrect account or password information.');
         }
     }
     public function dashboard(){
         $query = $this->getProductQuery()->paginate(25);
-        $displayMessage = false;
-         return view('admin.dashboard',['products'=>$query,'displayMessage' => $displayMessage]);
+    
+         return view('admin.dashboard',['products'=>$query]);
     }
     public function cateadmin(){
         $categories = DB::table('category')->get();
@@ -110,16 +109,16 @@ class AdminController extends BaseAdminController
         DB::table('image')->where('product_id', '=', $id)->delete();
         // Xóa hàng product
         DB::table('product')->where('product_id', '=', $id)->delete();
-        return 'Đã xóa thành công';
+        return 'ok';
     }
     public function delete($id)
     {
         $mess = $this->deleteProduct($id);
         
-        if ($mess === 'Đã xóa thành công') {
-            Session::flash('messDeleted', 'Đã xóa thành công');
+        if ($mess === 'ok') {
+            Session::flash('messDeleted', 'Deleted successfully');
         } else {
-            Session::flash('messDeleted', 'Không thể xóa sản phẩm này');
+            Session::flash('messDeleted', 'This product cannot be deleted');
         }
    
     return redirect()->back();
@@ -186,8 +185,8 @@ class AdminController extends BaseAdminController
         }
 
         // điều hướng về cuối trang sau khi insert
-        $products =  $this->getProductQuery()->paginate(25);
-        $page = $products->lastPage();
-        return redirect()->route('admin.dashboard', ['page' => $page]);
+        return redirect()->route('admin.dashboard')->with(session()->flash('insertsuccess', 'Product added successfully!'))->with('inser-alert', true);
+
+
     }
 }

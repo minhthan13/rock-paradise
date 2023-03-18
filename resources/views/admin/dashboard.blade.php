@@ -43,8 +43,6 @@
                     <td>{{ $pro->created_time }}</td>
                     <td>
                         <div class="d-flex justify-content-around box-crud">
-
-
                             <div class="box-edit">
                                 <i id="edit-product" class="bi bi-gear"></i>
                             </div>
@@ -64,7 +62,7 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <p>you are sure you want to delete the product : <span
+                                                <p>You are sure you want to delete the product : <span
                                                         class="productName text-danger"></span> ?</p>
                                             </div>
                                             <div class="modal-footer">
@@ -109,6 +107,13 @@
         @endif
     </div>
 
+    {{-- message index --}}
+    <script>
+        @if (session()->has('success_message'))
+            alert('{{ session()->get('success_message') }}');
+        @endif
+    </script>
+    {{-- message delete --}}
     <script>
         var showAlert = true;
         // thông báo xóa
@@ -119,11 +124,10 @@
             }
         @endif
     </script>
-    @if ($displayMessage)
-        <script>
-            alert('{{ session('success_message') }}');
-            showAlert = false;
-        </script>
-        <?php $displayMessage = false; ?>
-    @endif
+
+    <script>
+        @if (session()->has('inser-alert'))
+            alert('{{ session()->get('insertsuccess') }}');
+        @endif
+    </script>
 @endsection
