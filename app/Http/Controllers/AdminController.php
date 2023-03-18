@@ -132,6 +132,9 @@ class AdminController extends BaseAdminController
             'title' => 'required|string|min:1|max:255',
             'price' => ['required', 'integer', 'min:1', 'max:10000'],
             'cateid' => 'required',
+            'style' => 'required',
+            'type' => 'required',
+            'color' => 'required',
             'images.*' => 'image|mimes:jpg|max:2048'
         ]);
         $proName = strtoupper($request->post('proID'));
@@ -157,13 +160,14 @@ class AdminController extends BaseAdminController
             'color' => $color,
             
         ]);
-        // khởi tạo folder
-        $createFolder = public_path("images/product/{$proName}");
-        if (!File::exists($createFolder)) {
-            File::makeDirectory($createFolder);
-        }
+        
             // sử lý file được gửi lên 
         if ($request->hasFile('images')) {
+            // khởi tạo folder
+            $createFolder = public_path("images/product/{$proName}");
+                if (!File::exists($createFolder)) {
+                File::makeDirectory($createFolder);
+            }
         $imageFiles = $request->file('images');
             foreach ($imageFiles as $index => $imageFile) {
                 $extension = $imageFile->getClientOriginalExtension();
@@ -177,6 +181,8 @@ class AdminController extends BaseAdminController
                 $newFileName = DB::getPDO()->lastInsertId().".jpg";
                 File::move("{$createFolder}/{$fileName}", "{$createFolder}/{$newFileName}");
             }
+        }else{
+            DB::table('image')->insert(['product_id' => $inserProduct,'default_image' => 1]);
         }
 
         // điều hướng về cuối trang sau khi insert

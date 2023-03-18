@@ -44,22 +44,23 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="style" class="form-label">Style: </label>
-                        <input type="text" name='style' class="form-control" id="style"
-                            placeholder="Product Style">
+                        <label for="style" class="form-label">Style: <span class="text-danger">*</span></label>
+                        <input type="text" name='style' class="form-control" id="style" placeholder="Product Style"
+                            required>
                     </div>
                     <div class="mb-3">
-                        <label for="type" class="form-label">Type: </label>
-                        <input type="text" name='type' class="form-control" id="type" placeholder="Product Type">
+                        <label for="type" class="form-label">Type: <span class="text-danger">*</span></label>
+                        <input type="text" name='type' class="form-control" id="type" placeholder="Product Type"
+                            required>
                     </div>
                     <div class="mb-3">
-                        <label for="color" class="form-label">Color: </label>
-                        <input type="text" name='color' class="form-control" id="color"
-                            placeholder="Product Color">
+                        <label for="color" class="form-label">Color: <span class="text-danger">*</span></label>
+                        <input type="text" name='color' class="form-control" id="color" placeholder="Product Color"
+                            required>
                     </div>
                     <div id="form-size" class="mb-3">
                         <div class="d-flex justify-content-start gap-4 mb-3">
-                            <label for="size" class="form-label">Size: </label>
+                            <label for="size" class="form-label">Size: <span class="text-danger">*</span></label>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="size[]" id="small">
                                 <label class="form-check-label" for="small">
