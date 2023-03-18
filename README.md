@@ -1,6 +1,6 @@
 ### install project
 
-\*\*\* database : rockparadise
+\*\*\* database : `rockparadise`
 
 -   cp .env.example .env
 -   composer install
