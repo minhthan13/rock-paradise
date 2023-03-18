@@ -1,10 +1,57 @@
 @extends('admin.index')
 @section('admin-main')
-    <div>
+    <div class="container">
         <h2 class="text-center pt-3 fs-1 mb-3">Dashboard Products</h2>
-        {{-- button add product --}}
-        <a class="btn btn-info float-end mb-2 text-black-50 fw-bolder" href="{{ route('product.insert') }}" role="button">Add
-            Product</a>
+        <div class="row justify-content-between mb-2 gap-3">
+            {{-- filter dashboard --}}
+            <div class="col-md-1" id="fildash">
+                <form method="post" action="{{ route('admin.filter') }}">
+                    @csrf
+                    <select class="form-select form-select-sm " name='filterDash' aria-label=".form-select-sm"
+                        onchange="this.form.submit()">
+                        <option value="">Filter</option>
+                        <option value="1" {{ request()->input('filterDash') == '1' ? 'selected' : '' }}>
+                            &#10549;&emsp;Product
+                        </option>
+                        <option value="2" {{ request()->input('filterDash') == '2' ? 'selected' : '' }}>
+                            &#10506;&emsp;Product
+                        </option>
+                        <option value="3" {{ request()->input('filterDash') == '3' ? 'selected' : '' }}>
+                            &#10549;&emsp;Ratings
+                        </option>
+                        <option value="4" {{ request()->input('filterDash') == '4' ? 'selected' : '' }}>
+                            &#10506;&emsp;Ratings
+                        </option>
+                        <option value="5" {{ request()->input('filterDash') == '5' ? 'selected' : '' }}>
+                            &#10549;&emsp;Price
+                        </option>
+                        <option value="6" {{ request()->input('filterDash') == '6' ? 'selected' : '' }}>
+                            &#10506;&emsp;Price
+                        </option>
+                        <option value="7" {{ request()->input('filterDash') == '7' ? 'selected' : '' }}>
+                            &#10549;&emsp;Size
+                        </option>
+                        <option value="8" {{ request()->input('filterDash') == '8' ? 'selected' : '' }}>
+                            &#10506;&emsp;Size
+                        </option>
+                        <option value="9" {{ request()->input('filterDash') == '9' ? 'selected' : '' }}>
+                            &#10549;&emsp;Creation
+                            Tim</option>
+                        <option value="10" {{ request()->input('filterDash') == '10' ? 'selected' : '' }}>
+                            &#10506;&emsp;Creation
+                            Time</option>
+                    </select>
+                </form>
+            </div>
+            {{-- button add product --}}
+            <div class="col-md-1 pe-4">
+                <a class="btn btn-info text-black-50 fw-bolder text-nowrap" href="{{ route('product.insert') }}"
+                    role="button">Add
+                    Product</a>
+            </div>
+
+
+        </div>
         <table class="table table-bordered align-middle text-center">
             <tr class="align-middle table-primary">
                 <th>Product</th>

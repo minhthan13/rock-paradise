@@ -47,3 +47,6 @@ Route::get('admin/user',[AdminController::class,'listUser'])->name('admin.listUs
 Route::get('/admin/delete/{id}', [AdminController::class,'delete'])->name('product.delete');
 Route::get('/admin/insert',function(){return view('admin.insertPro');})->name('product.insert');
 Route::post('/admin/inserted', [AdminController::class,'insertPro'])->name('product.inserted');
+
+// filter
+Route::any('/filter-dashboard',[AdminController::class,'filterDashboard'])->name('admin.filter');

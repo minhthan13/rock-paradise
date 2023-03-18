@@ -26,7 +26,7 @@ class BaseAdminController extends Controller
                 DB::raw('ROUND(total_vote / vote_quantity, 1) as rating'))
                 ->join('category','product.category_id','=','category.category_id')
                 ->join('image', 'product.product_id', '=', 'image.product_id')
-                ->where('image.default_image', '=', '1')->orderByDesc('product_id');
+                ->where('image.default_image', '=', '1');
     }
 }
 class AdminController extends BaseAdminController
@@ -44,14 +44,14 @@ class AdminController extends BaseAdminController
         if(!empty($checkUser)){
             session()->flash('success_message', 'Logged in successfully');
             session()->put('user', $checkUser);
-            $query = $this->getProductQuery()->paginate(25);
+            $query = $this->getProductQuery()->orderByDesc('product_id')->paginate(25);
             return view('admin.dashboard',['products'=>$query]);
         } else {
             return redirect()->back()->with('error', 'Incorrect account or password information.');
         }
     }
     public function dashboard(){
-        $query = $this->getProductQuery()->paginate(25);
+        $query = $this->getProductQuery()->orderByDesc('product_id')->paginate(25);
     
          return view('admin.dashboard',['products'=>$query]);
     }
@@ -189,4 +189,48 @@ class AdminController extends BaseAdminController
 
 
     }
+
+    public function filterDashboard(Request $request)
+    {
+        
+        $filDash = $request->input('filterDash');
+
+        switch ($filDash) {
+            case '1':
+                $products = $this->getProductQuery()->orderBy('product.name', 'DESC')->paginate(25);
+                break;
+            case '2':    
+                $products = $this->getProductQuery()->orderBy('product.name', 'ASC')->paginate(25);
+                break;
+            case '3':
+                $products = $this->getProductQuery()->orderBy('rating', 'DESC')->paginate(25);
+                break;
+            case '4':
+                $products = $this->getProductQuery()->orderBy('rating', 'ASC')->paginate(25);
+                break;
+            case '5':
+                $products = $this->getProductQuery()->orderBy('product.price', 'DESC')->paginate(25);
+                break;
+            case '6':
+                $products = $this->getProductQuery()->orderBy('product.price', 'ASC')->paginate(25);
+                break;
+            case '7':
+                $products = $this->getProductQuery()->orderBy('product.size', 'DESC')->paginate(25);
+                break;
+            case '8':
+                $products = $this->getProductQuery()->orderBy('product.size', 'ASC')->paginate(25);
+                break;
+            case '9':
+                $products = $this->getProductQuery()->orderBy('product.created_time', 'DESC')->paginate(25);
+                break;
+            case '10':
+                $products = $this->getProductQuery()->orderBy('product.created_time', 'ASC')->paginate(25);
+                break;
+            default:
+                $products = $this->getProductQuery()->paginate(25);
+                break;
+        }
+    return view('admin.dashboard', ['products' => $products]);
+    }
+    
 }
