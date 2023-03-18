@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2023 at 10:58 AM
+-- Generation Time: Mar 18, 2023 at 02:43 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -642,7 +642,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_name`, `password`, `nick_name`) VALUES
 (1, 'admin', 'admin', 'admin'),
-(2, 'thannguyen', 'admin', 'Thân');
+(2, 'thannguyen', 'admin', 'Thân'),
+(3, 'maikhoa', 'admin', 'Mai Khoa');
 
 -- --------------------------------------------------------
 
@@ -1267,7 +1268,7 @@ ALTER TABLE `promotion`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user_action_log`
