@@ -4,10 +4,8 @@
         <ul>
             <li><a href="/giftcard"> Gift Cards</a></li>
             <li><a href="/sitemap"> Sitemap</a></li>
-            <li><a href=""> Esty Blog</a></li>
-            <li><a href=""> Esty United Kingdom</a></li>
-            <li><a href=""> Esty Germany</a></li>
-            <li><a href=""> Esty Canada</a></li>
+            <li><a href=""> Contact</a></li>
+            <li><a href="">About Us</a></li>
         </ul>
         <div class="dow-app">
             <p>Dowload the Esty App</p>

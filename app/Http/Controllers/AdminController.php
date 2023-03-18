@@ -186,7 +186,7 @@ class AdminController extends BaseAdminController
         }
 
         // điều hướng về cuối trang sau khi insert
-        $products = DB::table('product')->paginate(25);
+        $products =  $this->getProductQuery()->paginate(25);
         $page = $products->lastPage();
         return redirect()->route('admin.dashboard', ['page' => $page]);
     }

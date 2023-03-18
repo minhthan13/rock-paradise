@@ -371,6 +371,9 @@ ul.sub-menu {
     text-decoration: none;
     color: #000;
 }
+.item > ul > li a:hover {
+    text-decoration: underline;
+}
 .dow-app {
     border: 2px solid #fffffe;
     border-radius: 10px;
@@ -513,7 +516,7 @@ i.fa-bars {
     .sub-menu:hover {
         display: none;
     }
-    .hotspots-content{
+    .hotspots-content {
         width: 100%;
     }
 }
@@ -560,17 +563,17 @@ i.fa-bars {
 
 @keyframes bounceInDown {
     0% {
-       opacity: 0;
-       transform: translateY(-2000px);
+        opacity: 0;
+        transform: translateY(-2000px);
     }
     60% {
-       opacity: 1;
-       transform: translateY(30px);
+        opacity: 1;
+        transform: translateY(30px);
     }
     80% {
-       transform: translateY(-10px);
+        transform: translateY(-10px);
     }
     100% {
-       transform: translateY(0);
+        transform: translateY(0);
     }
- }
+}
