@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 
 
@@ -90,7 +91,8 @@ class AdminController extends BaseAdminController
         }
         return view('admin.imgAdmin',['imgs'=>$img,'products'=>$products]);
     }
-    public function listUser(){
+    public function listUser()
+    {
         $user = DB::table('user')->get();
         return view('admin.listUser',['user'=>$user]);
     }
@@ -98,24 +100,88 @@ class AdminController extends BaseAdminController
 
     // delete 
     public function deleteProduct($id)
-{
+    {
     // Kiểm tra xem hàng product có id=$id có tồn tại hay không
-    $product = DB::table('product')->where('product_id', '=', $id)->first();
-    if (!$product) {
-        return 'Hàng không tồn tại';
+        $product = DB::table('product')->where('product_id', '=', $id)->first();
+        if (!$product) {
+            return 'Hàng không tồn tại';
+        }
+        // Xóa các hàng image liên quan đến product
+        DB::table('image')->where('product_id', '=', $id)->delete();
+        // Xóa hàng product
+        DB::table('product')->where('product_id', '=', $id)->delete();
+        return 'Đã xóa thành công';
     }
-    // Xóa các hàng image liên quan đến product
-    DB::table('image')->where('product_id', '=', $id)->delete();
-    // Xóa hàng product
-    DB::table('product')->where('product_id', '=', $id)->delete();
-    return 'Đã xóa thành công';
-}
-public function delete($id){
-    $mess= $this->deleteProduct($id);
-    Session::flash('messDeleted', 'Đã xóa thành công');
+    public function delete($id)
+    {
+        $mess = $this->deleteProduct($id);
+        
+        if ($mess === 'Đã xóa thành công') {
+            Session::flash('messDeleted', 'Đã xóa thành công');
+        } else {
+            Session::flash('messDeleted', 'Không thể xóa sản phẩm này');
+        }
    
-    return redirect()->back()->with('messDeleted', Session::get('messDeleted'));
-}
+    return redirect()->back();
+    }
 
+    public function insertPro(Request $request)
+    {
+        $valid = $request->validate([
+            'proID' => 'required|string|min:4|max:25',
+            'title' => 'required|string|min:1|max:255',
+            'price' => ['required', 'integer', 'min:1', 'max:10000'],
+            'cateid' => 'required',
+            'images.*' => 'image|mimes:jpg|max:2048'
+        ]);
+        $proName = strtoupper($request->post('proID'));
+        $title    = $request->post('title');
+        $price    = $request->post('price');
+        $cateid     = $request->post('cateid');
+        $description = html_entity_decode(strip_tags($request->input('des')));
+        $style = $request->post('style');
+        $type = $request->post('type');
+        $color = $request->post('color');
+        $size = implode(', ', $request->input('size', []));
+        
+        $inserProduct = DB::table('product')
+        ->insertGetId([
+            'category_id' => $cateid,
+            'name' => $proName,
+            'title' => $title,
+            'price' => $price,
+            'description' => $description,
+            'style' => $style,
+            'type' => $type,
+            'size' => $size,
+            'color' => $color,
+            
+        ]);
+        // khởi tạo folder
+        $createFolder = public_path("images/product/{$proName}");
+        if (!File::exists($createFolder)) {
+            File::makeDirectory($createFolder);
+        }
+            // sử lý file được gửi lên 
+        if ($request->hasFile('images')) {
+        $imageFiles = $request->file('images');
+            foreach ($imageFiles as $index => $imageFile) {
+                $extension = $imageFile->getClientOriginalExtension();
+                // tạo tên
+                $fileName = "{$inserProduct}.{$extension}";
+                //di chuyển với thu mục được tạo ở trên
+                $imageFile->move($createFolder, $fileName);
+                $setDefalt = ($index ==0) ? 1 :0;
+                DB::table('image')->insert(['product_id' => $inserProduct,'default_image' => $setDefalt]);
+                // sửa lại tên file với name là image_id mới
+                $newFileName = DB::getPDO()->lastInsertId().".jpg";
+                File::move("{$createFolder}/{$fileName}", "{$createFolder}/{$newFileName}");
+            }
+        }
 
+        // điều hướng về cuối trang sau khi insert
+        $products = DB::table('product')->paginate(25);
+        $page = $products->lastPage();
+        return redirect()->route('admin.dashboard', ['page' => $page]);
+    }
 }

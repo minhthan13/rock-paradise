@@ -21,7 +21,8 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/faq.js') }}" defer></script>
     <script src="{{ asset('js/giftcard.js') }}" defer></script>
-    <script src="//cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+
 </head>
 
 <body>

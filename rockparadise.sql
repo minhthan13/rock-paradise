@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2023 at 11:59 PM
+-- Generation Time: Mar 18, 2023 at 03:18 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -477,11 +477,6 @@ INSERT INTO `image` (`image_id`, `product_id`, `default_image`) VALUES
 (355, 81, b'0'),
 (356, 81, b'0'),
 (357, 81, b'0'),
-(358, 82, b'1'),
-(359, 82, b'0'),
-(360, 82, b'0'),
-(361, 82, b'0'),
-(362, 82, b'0'),
 (363, 83, b'1'),
 (364, 83, b'0'),
 (365, 83, b'0'),
@@ -640,6 +635,14 @@ CREATE TABLE `user` (
   `password` varchar(50) NOT NULL,
   `nick_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_name`, `password`, `nick_name`) VALUES
+(1, 'admin', 'admin', 'admin'),
+(2, 'thannguyen', 'admin', 'Thân');
 
 -- --------------------------------------------------------
 
@@ -1246,13 +1249,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `image`
 --
 ALTER TABLE `image`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=377;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=387;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `promotion`
@@ -1264,7 +1267,7 @@ ALTER TABLE `promotion`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_action_log`

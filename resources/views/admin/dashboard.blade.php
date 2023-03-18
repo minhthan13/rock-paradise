@@ -2,6 +2,9 @@
 @section('admin-main')
     <div>
         <h2 class="text-center pt-3 fs-1 mb-3">Dashboard Products</h2>
+        {{-- button add product --}}
+        <a class="btn btn-info float-end mb-2 text-black-50 fw-bolder" href="{{ route('product.insert') }}" role="button">Add
+            Product</a>
         <table class="table table-bordered align-middle text-center">
             <tr class="align-middle table-primary">
                 <th>Product</th>
@@ -21,11 +24,20 @@
                     <td>{{ $pro->proname }}</td>
                     <td>{{ $pro->name }}</td>
                     <td class="shorten">{{ $pro->title }}</td>
-                    <td><img src="{{ asset('images/product/' . $pro->proname . '/' . $pro->image_id . '.jpg') }}"
-                            alt="{{ $pro->proname }}" width="40px" height="40px" /></td>
+                    <td>
+                        @php
+                            $imagePath = "images/product/{$pro->proname}/{$pro->image_id}.jpg";
+                        @endphp
+                        @if (file_exists(public_path($imagePath)))
+                            <img src="{{ asset($imagePath) }}" alt="{{ $pro->proname }}" width="40px" height="40px" />
+                        @else
+                            <img src="{{ asset('images/logo.avif') }}" alt="{{ $pro->proname }}" width="40px"
+                                height="40px" />
+                        @endif
+                    </td>
                     <td class="text-nowrap">{{ $pro->price }} &dollar;</td>
                     <td class=" shorten">{{ $pro->description }}</td>
-                    <td>{{ $pro->rating }}</td>
+                    <td>{{ $pro->rating ?? 'none' }}</td>
                     <td>{{ $pro->color }}</td>
                     <td>{{ $pro->size }}</td>
                     <td>{{ $pro->created_time }}</td>
@@ -66,17 +78,11 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </div>
-
                     </td>
                 </tr>
             @endforeach
         </table>
-        {{-- button add product --}}
-        <a class="btn btn-info float-end mb-2 text-black-50 fw-bolder" href="#" role="button">Add Product</a>
 
     </div>
     <div class="pagination mb-4">

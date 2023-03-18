@@ -22,5 +22,6 @@ class Filters extends Component
     public function render(): View|Closure|string
     {
         return view('components.filters');
+    
     }
 }

@@ -21,5 +21,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer(['layouts.header'],'App\Http\Composers\CateComposer');
+        View::composer(['admin.insertPro'],'App\Http\Composers\CateComposer');
+
     }
 }

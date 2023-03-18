@@ -8,13 +8,11 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="{{ asset('css/admin/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/panigation.css') }}">
-
-
     <script src="{{ asset('js/admin.js') }}" defer></script>
     <script src="{{ asset('js/dashboard.js') }}" defer></script>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+
 </head>
 
 <body>
@@ -43,10 +41,6 @@
             @yield('admin-main')
         </main>
     </div>
-
-
-
-
 </body>
 
 </html>
