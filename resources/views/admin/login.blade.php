@@ -21,13 +21,22 @@
             @endif
 
             <div class="form-field">
-                <input type="submit" value="Log in">
+                <input type="submit" value="Log in" id="btnLogin">
             </div>
         </form>
 
     </div>
     @if (Session::has('error'))
-        <div class="alert">{{ Session::get('error') }}</div>
+        <script>
+            alert("{{ Session::get('error') }}");
+        </script>
     @endif
-
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Enter') {
+                event.preventDefault(); // prevent default behavior of form
+                document.getElementById("btnLogin").click(); // trigger Click event of button
+            }
+        });
+    </script>
 </div>

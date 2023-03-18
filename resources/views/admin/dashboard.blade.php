@@ -46,7 +46,7 @@
                             <div class="box-edit">
                                 <i id="edit-product" class="bi bi-gear"></i>
                             </div>
-
+                            {{-- box delete --}}
                             <div class="box-deleted">
                                 <i id="delete-product" class="bi bi-trash " data-bs-toggle="modal"
                                     data-bs-target="#exampleModal" data-proname="{{ $pro->proname }}"

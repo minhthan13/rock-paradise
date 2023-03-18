@@ -30,4 +30,3 @@ for (var i = 0; i < shortens.length; i++) {
         shorten.textContent = abstract;
     }
 }
-CKEDITOR.replace("des");

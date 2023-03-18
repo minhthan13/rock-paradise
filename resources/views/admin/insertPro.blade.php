@@ -31,6 +31,9 @@
                         <label for="des" class="form-label">Description: </label>
                         <textarea class="form-control h-25" id="des" rows="6" name='des'></textarea>
                     </div>
+                    <script>
+                        CKEDITOR.replace("des");
+                    </script>
                 </div>
                 {{-- right --}}
                 <div class="col-md-4">
@@ -82,7 +85,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="imageUP" class="form-label">Image Upload: </label>
-                            <input class="form-control" name='images[]' type="file" id="imageUP">
+                            <input class="form-control" name='images[]' type="file" id="imageUP" multiple>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-info text-black-50 mt-3">Add Product</button>

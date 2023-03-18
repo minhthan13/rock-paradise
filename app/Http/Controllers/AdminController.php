@@ -72,7 +72,7 @@ class AdminController extends BaseAdminController
     }
     public function imgadmin(){
         $img = [];
-        $products = DB::table('product')->select('product_id', 'name')->paginate(12);
+        $products = DB::table('product')->select('product_id', 'name')->orderByDesc('product_id')->paginate(12);
         foreach ($products as $product) {
             //  lấy id của hình ảnh
             $productImages = DB::table('image')
