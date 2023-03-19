@@ -4,17 +4,27 @@
         <ul>
             <li><a href="/giftcard"> Gift Cards</a></li>
             <li><a href="/sitemap"> Sitemap</a></li>
-            <li><a href=""> Contact</a></li>
-            <li><a href="">About Us</a></li>
+            <li><a href="/contact"> Contact</a></li>
+            <li><a href="/about">About Us</a></li>
         </ul>
         <div class="dow-app">
-            <p>Dowload the Esty App</p>
+            <a href="/products">
+                <p>Gallery Products</p>
+            </a>
         </div>
         <div class="social-icon">
-            <i class="fa-brands fa-square-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-youtube"></i>
+            <a href="https://www.facebook.com/aptechvietnam.com.vn">
+                <i class="fa-brands fa-square-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/@AprotrainAptech">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
         </div>
     </div>
     <div class="item">

@@ -1,7 +1,7 @@
 .sitemap {
 }
 .sitemap h2 {
-    font-size: 30px;
+    font-size: 2.7em;
     text-align: center;
     margin-top: 20px;
 }
@@ -19,7 +19,7 @@
 .sitemap div ul p {
     font-size: 25px;
     font-weight: 500;
-    text-decoration: underline;
+    text-decoration: underline #a7a2a2;
     margin: 10px 0;
 }
 .sitemap div ul li {
@@ -29,7 +29,7 @@
 }
 .sitemap div ul li a {
     text-decoration: none;
-    color: #ccc;
+    color: #8f8a8a;
 }
 .sitemap div ul li a:hover {
     text-decoration: underline;

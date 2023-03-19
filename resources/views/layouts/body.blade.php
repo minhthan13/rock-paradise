@@ -20,7 +20,6 @@
                             <div class="present-rating">
                             </div>
                         </div>
-
                         <p class="total-rate">
                             {{ $pro->rating }} star
                         </p>
@@ -33,7 +32,13 @@
         <a href="/products">SHOP ALL</a>
     </div>
     <div class="e-voucher">
-        <img src="https://i.etsystatic.com/16874044/r/il/661143/3428144869/il_570xN.3428144869_iovn.jpg" alt="" />
+        <img src="https://cdn.shopify.com/s/files/1/0072/9631/9591/collections/gift-cards-496323_1944x.jpg?v=1676309648"
+            alt="" />
+        <div class="link">
+            <a href="/giftcard">GIFT CARD
+            </a>
+        </div>
+
     </div>
     <div class="hotspots">
         <h2 class="hotspots-title">THE LIFESTYLE EDIT</h2>

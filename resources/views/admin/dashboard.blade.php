@@ -9,7 +9,7 @@
                     @csrf
                     <select class="form-select form-select-sm " name='filterDash' aria-label=".form-select-sm"
                         onchange="this.form.submit()">
-                        <option value="">Filter</option>
+                        <option>Filter</option>
                         <option value="1" {{ request()->input('filterDash') == '1' ? 'selected' : '' }}>
                             &#10549;&emsp;Product
                         </option>

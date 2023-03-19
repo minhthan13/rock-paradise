@@ -1,9 +1,14 @@
 //đếm traffic
-let count = 1000;
+let count = 10000000;
 if (!localStorage.getItem("count")) {
     localStorage.setItem("count", 0);
 } else {
     count = parseInt(localStorage.getItem("count"));
+}
+if (count >= 1000000) {
+    count = (count / 1000000).toFixed(1) + "m";
+} else if (count >= 1000) {
+    count = (count / 1000).toFixed(1) + "k";
 }
 document.getElementById("traffic").innerHTML = count;
 count++;

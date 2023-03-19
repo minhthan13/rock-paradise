@@ -35,8 +35,10 @@
                         <textarea name="" id="" cols="30" rows="10"></textarea>
                     </div>
                 </div>
-                <div class="btn">
-                    <button type="submit">SEND</button>
+                <div class="link">
+                    <a href="">
+                        <button type="submit">SEND</button>
+                    </a>
                 </div>
             </form>
         </div>

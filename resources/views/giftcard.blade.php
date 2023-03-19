@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('main')
-
     <div class="giftcard">
         <div class="giftcard-img">
             <img src="https://cdn.shopify.com/s/files/1/1552/6795/products/Card_720x.jpg?v=1603661943" alt="">
@@ -38,9 +37,10 @@
                 <textarea name="" id="" cols="30" rows="10" placeholder="Gift message (optional)"></textarea>
                 <p>From</p>
                 <input type="text" name="" id="" placeholder="Sender's Name">
-                <button type="submit">Add to cart</button>
+                <div class="link">
+                    <button type="submit">Add to cart</button>
+                </div>
             </div>
         </div>
     </div>
-
 @endsection
