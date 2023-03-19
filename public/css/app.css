@@ -38,8 +38,6 @@ img {
 
     position: relative;
 }
-.nav-icon {
-}
 .nav-icon i {
     margin: 0px 10px;
     font-size: 20px;
@@ -266,7 +264,8 @@ ul.sub-menu {
     align-items: center;
     justify-content: center;
 }
-.link button {
+.link button,
+.link input {
     width: 100%;
     height: 100%;
     background: none;
@@ -500,8 +499,6 @@ i.fa-bars {
     .nav-item {
         border-bottom: 1px solid #565252;
         padding: 15px 0px;
-    }
-    .nav-item:last-child {
     }
     .has-child :hover ~ .sub-menu,
     .sub-menu:hover {

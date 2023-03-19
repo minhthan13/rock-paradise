@@ -6,39 +6,38 @@
             <p>
                 <strong>Email</strong>
             </p>
-            <p>sales@rockparadise.com</p>
+            <p>nguyenminhthan1308@gmail.com</p>
             <p>
                 <strong>Phone</strong>
             </p>
-            <p>866-364-9777</p>
+            <p>(+84)-902-518-533</p>
         </div>
         <div class="form-contact">
-            <form action="">
+            <form action="https://formspree.io/f/xbjeajoa" method="POST">
+                @csrf
                 <h2 class="title-product">Contact Us</h2>
                 <div class="input-text">
                     <div class="name-email">
                         <div class="name">
                             <label for="">Name</label>
-                            <input type="text">
+                            <input type="text" name="name">
                         </div>
                         <div class="email">
                             <label for="">Email</label>
-                            <input type="email">
+                            <input type="email" name="email">
                         </div>
                     </div>
                     <div class="phone">
                         <label for="">Phone</label>
-                        <input type="number" name="" id="">
+                        <input type="number" name="phone">
                     </div>
                     <div class="message">
                         <label for="">Message</label>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <textarea name="mess" id="" cols="30" rows="10"></textarea>
                     </div>
                 </div>
                 <div class="link">
-                    <a href="">
-                        <button type="submit">SEND</button>
-                    </a>
+                    <input type="submit" value="SEND" />
                 </div>
             </form>
         </div>
