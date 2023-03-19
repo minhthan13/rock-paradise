@@ -1,16 +1,17 @@
 //đếm traffic
-let count = 10000000;
+let count = 960;
+function formatCount(count) {
+    if (count >= 1000000000) return (count / 1000000000).toFixed(1) + "b";
+    if (count >= 1000000) return (count / 1000000).toFixed(1) + "m";
+    if (count >= 1000) return (count / 1000).toFixed(1) + "k";
+    return count.toLocaleString();
+}
 if (!localStorage.getItem("count")) {
-    localStorage.setItem("count", 0);
+    localStorage.setItem("count", count);
 } else {
     count = parseInt(localStorage.getItem("count"));
 }
-if (count >= 1000000) {
-    count = (count / 1000000).toFixed(1) + "m";
-} else if (count >= 1000) {
-    count = (count / 1000).toFixed(1) + "k";
-}
-document.getElementById("traffic").innerHTML = count;
+document.getElementById("traffic").innerHTML = formatCount(count);
 count++;
 localStorage.setItem("count", count);
 
