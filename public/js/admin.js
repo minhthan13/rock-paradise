@@ -30,3 +30,32 @@ for (var i = 0; i < shortens.length; i++) {
         shorten.textContent = abstract;
     }
 }
+
+//  box confirm add product
+const proIDField = document.getElementById("proID");
+const titleField = document.getElementById("title");
+const priceField = document.getElementById("price");
+const cateField = document.getElementById("cate");
+const styleField = document.getElementById("style");
+const typeField = document.getElementById("type");
+const coloField = document.getElementById("color");
+
+const confirmProID = document.getElementById("confirm-proID");
+const confirmTitle = document.getElementById("confirm-title");
+const confirmPrice = document.getElementById("confirm-price");
+const confirmStyle = document.getElementById("confirm-style");
+const confirmType = document.getElementById("confirm-type");
+const confirmColor = document.getElementById("confirm-color");
+const confirmCate = document.getElementById("confirm-cate");
+
+document
+    .querySelector('[data-bs-target="#BoxConfirm"]')
+    .addEventListener("click", () => {
+        confirmProID.innerText = proIDField.value;
+        confirmTitle.innerText = titleField.value;
+        confirmPrice.innerText = `$${priceField.value}.00`;
+        confirmCate.innerText = cateField.options[cate.selectedIndex].text;
+        confirmStyle.innerText = styleField.value;
+        confirmType.innerText = typeField.value;
+        confirmColor.innerText = coloField.value;
+    });

@@ -24,7 +24,7 @@
             <li class="logout warn"><a href="/">Log Out</a></li>
         </ul>
     </header>
-    <nav role='navigation'>
+    <nav role='navigation' class="z-3">
         <ul class="main">
             <li class="dashboard"><a href="dashboard">Dashboard</a></li>
             <li class="category"><a href="{{ route('admin.cate') }}">Category</a></li>

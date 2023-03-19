@@ -36,9 +36,15 @@
     <footer>
         @include('layouts.footer')
     </footer>
+
+
     <button id="scrollToTopBtn">
+        <p id="traffic"></p>
         <i class="fa-solid fa-arrow-up"></i>
     </button>
+
+
+
 </body>
 
 </html>

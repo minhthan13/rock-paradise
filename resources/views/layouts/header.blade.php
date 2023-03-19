@@ -1,5 +1,5 @@
 <div class="navbar">
-    <p id="traffic"></p>
+
     <div class="logo-navbar">
         <a href="/">
             <img src="{{ asset('images/logo.avif') }}" alt="logo" />

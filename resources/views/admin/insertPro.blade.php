@@ -13,8 +13,8 @@
                             required>
                     </div>
                     <div class="mb-3">
-                        <label for="proname" class="form-label">Product Name: <span class="text-danger">*</span></label>
-                        <input type="text" name='title' class="form-control" id="proname" placeholder="Product ID"
+                        <label for="proname" class="form-label">Product Title: <span class="text-danger">*</span></label>
+                        <input type="text" name='title' class="form-control" id="title" placeholder="Product Title"
                             required>
                     </div>
                     <div class="mb-3">
@@ -88,10 +88,67 @@
                             <input class="form-control" name='images[]' type="file" id="imageUP" multiple>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-info text-black-50 mt-3">Add Product</button>
+                    <button type="button" class="btn btn-info text-black" data-bs-toggle="modal"
+                        data-bs-target="#BoxConfirm">
+                        ADD Product
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="BoxConfirm" tabindex="-1" aria-labelledby="Add-Confirm"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="Add-Confirm">
+                                        <b>Confirm Product Information</b>
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table">
+                                        <tbody>
+                                            <!-- Add a table row for each field of the form that you want to show in the modal -->
+                                            <tr>
+                                                <td class="col-4"><strong>Product ID:</strong></td>
+                                                <td id="confirm-proID" class="col-8"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Product Name:</strong></td>
+                                                <td id="confirm-title"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Category:</strong></td>
+                                                <td id="confirm-cate"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Price:</strong></td>
+                                                <td id="confirm-price"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Style:</strong></td>
+                                                <td id="confirm-style"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Type:</strong></td>
+                                                <td id="confirm-type"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Color:</strong></td>
+                                                <td id="confirm-color"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="submit" class="btn btn-info text-black" value="Confirm" />
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-
             </form>
         </div>
     </div>

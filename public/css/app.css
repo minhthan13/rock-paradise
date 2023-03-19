@@ -24,13 +24,11 @@ img {
     padding: 1em 0;
 }
 #traffic {
-    width: 1em;
-    height: 1em;
+    padding: 1em 0;
     position: absolute;
-    z-index: 5;
-    left: 0;
-    top: 0;
-    opacity: 0.5;
+    top: -44px;
+    left: 10px;
+    color: #07c098;
 }
 .nav-list {
     display: flex;
