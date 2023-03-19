@@ -19,6 +19,7 @@ class FilterController extends Controller
                 'image.image_id', 
                 'image.default_image',
                 'product.description',
+                'product.vote_quantity',
                 DB::raw('ROUND(total_vote / vote_quantity, 1) as rating')
             )
             ->join('image','product.product_id','=','image.product_id')
@@ -51,6 +52,7 @@ class FilterController extends Controller
             $query->whereIn('size', $sizes);
         }
         $query->orderByDesc('price');
+        
         switch($view){
             case 'products':
                 $perPage = $query->paginate(12, ['*'], 'page', $request->get('page'));

@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS rockparadise;
+CREATE DATABASE rockparadise CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE rockparadise;
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
