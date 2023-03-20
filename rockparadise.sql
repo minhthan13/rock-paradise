@@ -6,7 +6,7 @@ USE rockparadise;
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2023 at 02:43 PM
+-- Generation Time: Mar 20, 2023 at 04:26 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -651,19 +651,6 @@ INSERT INTO `user` (`user_id`, `user_name`, `password`, `nick_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_action_log`
---
-
-CREATE TABLE `user_action_log` (
-  `log_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `vote_product`
 --
 
@@ -1227,12 +1214,6 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Indexes for table `user_action_log`
---
-ALTER TABLE `user_action_log`
-  ADD PRIMARY KEY (`log_id`);
-
---
 -- Indexes for table `vote_product`
 --
 ALTER TABLE `vote_product`
@@ -1253,13 +1234,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `image`
 --
 ALTER TABLE `image`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=414;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=446;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
 -- AUTO_INCREMENT for table `promotion`
@@ -1272,12 +1253,6 @@ ALTER TABLE `promotion`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `user_action_log`
---
-ALTER TABLE `user_action_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `vote_product`
