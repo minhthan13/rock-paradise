@@ -107,6 +107,8 @@ class AdminController extends BaseAdminController
         }
         // Xóa các hàng image liên quan đến product
         DB::table('image')->where('product_id', '=', $id)->delete();
+        // Xoa Hang cua bang Vote_Product
+        DB::table('vote_product')->where('product_id','=',$id)->delete();
         // Xóa hàng product
         DB::table('product')->where('product_id', '=', $id)->delete();
         Session::flash('messDeleted', 'Deleted successfully');
