@@ -137,6 +137,10 @@
                                                 <td><strong>Color:</strong></td>
                                                 <td id="confirm-color"></td>
                                             </tr>
+                                            <tr>
+                                                <td><strong>Image Upload</strong></td>
+                                                <td id="confirm-imageUP"></td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>

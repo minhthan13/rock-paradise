@@ -1,10 +1,9 @@
 // delete product
-let modal = document.querySelector("#exampleModal");
+let modal = document.querySelector("#BoxDelete");
 modal.addEventListener("show.bs.modal", function (event) {
     let button = event.relatedTarget;
     let productName = button.dataset.proname;
     let productid = button.getAttribute("data-proid");
-    console.log(productid);
     // Chuyển giá trị vừa lấy vào trong Modal
     let modalBody = modal.querySelector(".modal-body p span.productName");
     modalBody.textContent = productName;

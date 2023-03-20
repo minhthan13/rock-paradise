@@ -35,18 +35,17 @@ Route::get('/sitemap',function(){return view('sitemap');});
 Route::get('/giftcard',function(){return view('giftcard');});
 
 // admin
-Route::get('/admin', 'ProductController@index')->name('admin.home');
+Route::get('/admin', 'ProductController@index')->name('admin.home'); // go back home
 Route::get('/login',function(){return view('admin.login');})->name('admin.login');
 Route::post('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
 Route::get('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.product');
 Route::get('admin/category',[AdminController::class,'cateadmin'])->name('admin.cate');
 Route::get('admin/img',[AdminController::class,'imgadmin'])->name('admin.img');
 Route::get('admin/user',[AdminController::class,'listUser'])->name('admin.listUser');
-
-// deleted
-Route::get('/admin/delete/{id}', [AdminController::class,'delete'])->name('product.delete');
+// deleted Product
+Route::get('/admin/delete/{id}', [AdminController::class,'deleteProduct'])->name('product.delete');
+// insert Product
 Route::get('/admin/insert',function(){return view('admin.insertPro');})->name('product.insert');
 Route::post('/admin/inserted', [AdminController::class,'insertPro'])->name('product.inserted');
-
 // filter
 Route::any('/filter-dashboard',[AdminController::class,'filterDashboard'])->name('admin.filter');

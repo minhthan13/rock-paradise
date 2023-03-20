@@ -32,21 +32,23 @@ for (var i = 0; i < shortens.length; i++) {
 }
 
 //  box confirm add product
-const proIDField = document.getElementById("proID");
-const titleField = document.getElementById("title");
-const priceField = document.getElementById("price");
-const cateField = document.getElementById("cate");
-const styleField = document.getElementById("style");
-const typeField = document.getElementById("type");
-const coloField = document.getElementById("color");
+let proIDField = document.getElementById("proID");
+let titleField = document.getElementById("title");
+let priceField = document.getElementById("price");
+let cateField = document.getElementById("cate");
+let styleField = document.getElementById("style");
+let typeField = document.getElementById("type");
+let coloField = document.getElementById("color");
+let fileField = document.getElementById("imageUP");
 
-const confirmProID = document.getElementById("confirm-proID");
-const confirmTitle = document.getElementById("confirm-title");
-const confirmPrice = document.getElementById("confirm-price");
-const confirmStyle = document.getElementById("confirm-style");
-const confirmType = document.getElementById("confirm-type");
-const confirmColor = document.getElementById("confirm-color");
-const confirmCate = document.getElementById("confirm-cate");
+let confirmProID = document.getElementById("confirm-proID");
+let confirmTitle = document.getElementById("confirm-title");
+let confirmPrice = document.getElementById("confirm-price");
+let confirmStyle = document.getElementById("confirm-style");
+let confirmType = document.getElementById("confirm-type");
+let confirmColor = document.getElementById("confirm-color");
+let confirmCate = document.getElementById("confirm-cate");
+let confirmIMG = document.getElementById("confirm-imageUP");
 
 document
     .querySelector('[data-bs-target="#BoxConfirm"]')
@@ -58,4 +60,6 @@ document
         confirmStyle.innerText = styleField.value;
         confirmType.innerText = typeField.value;
         confirmColor.innerText = coloField.value;
+        let numFiles = fileField.files.length;
+        confirmIMG.innerText = `${numFiles} File${numFiles !== 1 ? "s" : ""}`;
     });

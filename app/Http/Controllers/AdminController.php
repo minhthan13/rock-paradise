@@ -32,7 +32,8 @@ class BaseAdminController extends Controller
 class AdminController extends BaseAdminController
 {
     
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $validated  = $request->validate([
             'user' => 'required|string|min:4|max:255',
             'password' => 'required|string|min:4'
@@ -95,35 +96,24 @@ class AdminController extends BaseAdminController
         $user = DB::table('user')->get();
         return view('admin.listUser',['user'=>$user]);
     }
-
-
     // delete 
     public function deleteProduct($id)
     {
-    // Kiểm tra xem hàng product có id=$id có tồn tại hay không
+    // Kiểm tra xem hàng product có product_id=$id có tồn tại hay không
         $product = DB::table('product')->where('product_id', '=', $id)->first();
         if (!$product) {
-            return 'Hàng không tồn tại';
+        Session::flash('messDeleted', 'This product cannot be deleted');
+        return redirect()->back();
         }
         // Xóa các hàng image liên quan đến product
         DB::table('image')->where('product_id', '=', $id)->delete();
         // Xóa hàng product
         DB::table('product')->where('product_id', '=', $id)->delete();
-        return 'ok';
+        Session::flash('messDeleted', 'Deleted successfully');
+        return redirect()->back();
     }
-    public function delete($id)
-    {
-        $mess = $this->deleteProduct($id);
-        
-        if ($mess === 'ok') {
-            Session::flash('messDeleted', 'Deleted successfully');
-        } else {
-            Session::flash('messDeleted', 'This product cannot be deleted');
-        }
-   
-    return redirect()->back();
-    }
-
+    
+    // inssert
     public function insertPro(Request $request)
     {
         $valid = $request->validate([
@@ -134,17 +124,17 @@ class AdminController extends BaseAdminController
             'style' => 'required',
             'type' => 'required',
             'color' => 'required',
-            'images.*' => 'image|mimes:jpg|max:2048'
+            'images.*' => 'image|max:10240|mimes:jpg,jpeg,png,bmp,gif'
         ]);
-        $proName = strtoupper($request->post('proID'));
-        $title    = $request->post('title');
-        $price    = $request->post('price');
-        $cateid     = $request->post('cateid');
+        $proName     = strtoupper($request->post('proID'));
+        $title       = $request->post('title');
+        $price       = $request->post('price');
+        $cateid      = $request->post('cateid');
         $description = html_entity_decode(strip_tags($request->input('des')));
-        $style = $request->post('style');
-        $type = $request->post('type');
-        $color = $request->post('color');
-        $size = implode(', ', $request->input('size', []));
+        $style       = $request->post('style');
+        $type        = $request->post('type');
+        $color       = $request->post('color');
+        $size        = implode(', ', $request->input('size', []));
         
         $inserProduct = DB::table('product')
         ->insertGetId([
@@ -159,8 +149,7 @@ class AdminController extends BaseAdminController
             'color' => $color,
             
         ]);
-        
-            // sử lý file được gửi lên 
+            // xử lý file được gửi lên 
         if ($request->hasFile('images')) {
             // khởi tạo folder
             $createFolder = public_path("images/product/{$proName}");
@@ -174,6 +163,7 @@ class AdminController extends BaseAdminController
                 $fileName = "{$inserProduct}.{$extension}";
                 //di chuyển với thu mục được tạo ở trên
                 $imageFile->move($createFolder, $fileName);
+                // set defaul 1 cho hinh anh thu nhat
                 $setDefalt = ($index ==0) ? 1 :0;
                 DB::table('image')->insert(['product_id' => $inserProduct,'default_image' => $setDefalt]);
                 // sửa lại tên file với name là image_id mới
@@ -183,13 +173,12 @@ class AdminController extends BaseAdminController
         }else{
             DB::table('image')->insert(['product_id' => $inserProduct,'default_image' => 1]);
         }
-
         // điều hướng về cuối trang sau khi insert
         return redirect()->route('admin.dashboard')->with(session()->flash('insertsuccess', 'Product added successfully!'))->with('inser-alert', true);
 
 
     }
-
+ //filter
     public function filterDashboard(Request $request)
     {
         

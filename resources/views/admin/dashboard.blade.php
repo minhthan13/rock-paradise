@@ -49,8 +49,6 @@
                     role="button">Add
                     Product</a>
             </div>
-
-
         </div>
         <table class="table table-bordered align-middle text-center">
             <tr class="align-middle table-primary">
@@ -96,15 +94,15 @@
                             {{-- box delete --}}
                             <div class="box-deleted">
                                 <i id="delete-product" class="bi bi-trash " data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" data-proname="{{ $pro->proname }}"
+                                    data-bs-target="#BoxDelete" data-proname="{{ $pro->proname }}"
                                     data-proid="{{ $pro->product_id }}">
                                 </i>
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                <div class="modal fade" id="BoxDelete" tabindex="-1" aria-labelledby="ModalLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">DELETED</h1>
+                                                <h1 class="modal-title fs-5" id="ModalLabel">DELETED</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
@@ -171,7 +169,6 @@
             }
         @endif
     </script>
-
     <script>
         @if (session()->has('inser-alert'))
             alert('{{ session()->get('insertsuccess') }}');
