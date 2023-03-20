@@ -19,7 +19,6 @@
                             <div class="present-rating">
                             </div>
                         </div>
-
                         <p class="total-rate">
                             {{ $pro->rating }} Star&nbsp;-&nbsp;<k>{{ $pro->vote_quantity }} Vote</k>
                         </p>

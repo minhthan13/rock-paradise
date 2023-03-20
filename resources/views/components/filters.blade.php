@@ -4,7 +4,6 @@
     <i class="fa-solid fa-filter"></i>
 </div>
 <div class="container-filter close">
-
     <div class="box-filter">
         <div class="header-filter">
             <p>Filter Product</p>
