@@ -56,10 +56,24 @@
                         <input type="text" name='type' class="form-control" id="type" placeholder="Product Type"
                             required>
                     </div>
-                    <div class="mb-3">
-                        <label for="color" class="form-label">Color: <span class="text-danger">*</span></label>
-                        <input type="text" name='color' class="form-control" id="color" placeholder="Product Color"
-                            required>
+                    <div class="mb-3 col-2 d-flex text-nowrap">
+                        <label for="color" class="form-label align-items-center align-self-center">Color: <span
+                                class="text-danger">*</span></label>
+                        {{-- <input type="text" name='color' class="form-control" id="color" placeholder="Product Color"
+                            required> --}}
+                        <select name="color" id="color" class="form-select col-1 ms-2">
+                            <option value="none" disabled selected>None</option>
+                            <option value="purple" style="background-color:blueviolet;">
+                                Purple
+                            </option>
+                            <option value="pink" style="background-color:rgb(243, 142, 159)">Pink</option>
+                            <option value="blue" class="bg-primary">Blue</option>
+                            <option value="green" class="bg-success">Green</option>
+                            <option value="yellow" class="bg-warning">Yellow</option>
+                            <option value="red" class="bg-danger">Red</option>
+                            <option value="white" style="background-color: aliceblue">White</option>
+                            <option value="orther" class="bg-body">Orther</option>
+                        </select>
                     </div>
                     <div id="form-size" class="mb-3">
                         <div class="d-flex justify-content-start gap-4 mb-3">

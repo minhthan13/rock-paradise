@@ -36,7 +36,7 @@
                         </option>
                         <option value="9" {{ request()->input('filterDash') == '9' ? 'selected' : '' }}>
                             &#10549;&emsp;Creation
-                            Tim</option>
+                            Time</option>
                         <option value="10" {{ request()->input('filterDash') == '10' ? 'selected' : '' }}>
                             &#10506;&emsp;Creation
                             Time</option>
